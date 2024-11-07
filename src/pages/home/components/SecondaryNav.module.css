@@ -1,0 +1,42 @@
+.secondaryNav {
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Make it responsive */
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  padding: 0 8px;
+  transition: color 0.2s ease;
+  font-weight: 600 !important;
+}
+
+.navItem:hover {
+  color: #d4a02b; /* Change color on hover */
+}
+
+.label {
+  font-weight: 600 !important;
+  text-transform: uppercase;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navGroup {
+    gap: 8px;
+    justify-content: center;
+  }
+  .navItem {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,24 @@
+.header {
+  background-color: #ffffff;
+  padding: 48px 0 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  padding-bottom: 32px;
+}
+
+.logo {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

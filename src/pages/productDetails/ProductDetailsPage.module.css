@@ -1,0 +1,60 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+}
+
+.discountBanner {
+  background-color: #004c97;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px;
+}
+
+.categoryName {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+}
+
+.durationButtons button {
+  margin-top: 4px;
+}
+.ingridentsTitle {
+  text-align: center;
+}
+.cardSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardSection .hiddenText {
+  position: absolute;
+  left: -110%;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  /* Corrected background gradient syntax */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  color: #fff; /* Make text white for visibility */
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text */
+  transition: all 0.2s ease-in;
+}
+
+.cardSection:hover .hiddenText {
+  left: 0; /* Bring the text overlay into view */
+}

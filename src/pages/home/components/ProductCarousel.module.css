@@ -1,0 +1,49 @@
+.carouselContainer {
+  padding: 20px 0;
+}
+
+.pills {
+  margin-bottom: 20px;
+}
+.tabsList {
+  justify-content: center !important;
+  margin-bottom: 3rem !important;
+}
+
+.pills a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600 !important;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  font-size: 12px;
+}
+
+.productName {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.carouselIndicator {
+  background-color: #f8b400; /* Custom color for indicators */
+}
+
+.card {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+button {
+  background-color: #f8b400;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e09e00;
+}
