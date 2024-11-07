@@ -15,7 +15,6 @@ import {
 import { IconCheck } from "@tabler/icons-react";
 import styles from "./ProductDetailsPage.module.css"; // Add styles as necessary
 
-// Sample Data
 const product = {
   name: "Cureveda Pro Plant Protein",
   description: "100% Vegan Protein Isolate",
