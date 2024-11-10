@@ -4,6 +4,9 @@ import AllProductsPage from "./pages/allProducts";
 import TopBar from "./pages/home/components/Topbar";
 import Header from "./pages/home/components/Header";
 import ProductDetailsPage from "./pages/productDetails";
+import LoginUserForm from "./pages/LoginUser";
+import RegisterUserPage from "./pages/RegisterUser";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   // notifications.show({ message: "hello" });
@@ -11,12 +14,15 @@ function App() {
     <>
       <TopBar />
       <Header />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="all-products" element={<AllProductsPage />} />
         <Route path="product/:productId" element={<ProductDetailsPage />} />
-        {/* <Route path="*" element={<Authenticated />} /> */}
-      </Routes>
+        <Route path="login" element={<LoginUserForm />} />
+        <Route path="register" element={<RegisterUserPage />} />
+        
+      </Routes> */}
+      <AppRoutes />
     </>
   );
 }

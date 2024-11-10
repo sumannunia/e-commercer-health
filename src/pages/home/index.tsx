@@ -9,8 +9,6 @@ const Home = () => {
       <SecondaryNav />
       <SingleBanner />
       <BannerCarousel />
-      <SingleBanner />
-      <BannerCarousel />
       <ProductCarousel />
     </>
   );

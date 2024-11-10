@@ -100,7 +100,7 @@ const ProductCarousel = () => {
           {categories.map((category) => (
             <Tabs.Tab value={category} key={category}>
               <a
-                href={`/all-products?${category}`}
+                href={`/products?category=${category}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

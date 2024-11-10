@@ -14,6 +14,9 @@ import {
 } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import styles from "./ProductDetailsPage.module.css"; // Add styles as necessary
+import { useAppDispatch } from "../../redux/store";
+import { useFetch } from "../../hooks/usefetch";
+import { addItemToCart } from "../../redux/slices/cartSlice";
 
 const product = {
   name: "Cureveda Pro Plant Protein",
@@ -86,7 +89,20 @@ const ProductDetailsPage = () => {
   const [selectedFlavor, setSelectedFlavor] = useState(product.flavors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const [activeImage, setActiveImage] = useState(product.images[0]);
-
+  const dispatch = useAppDispatch();
+  const { data, loading }: any = useFetch("/products");
+  console.log({ data });
+  const handleAddToCart = (product: any) => {
+    const { productId, productName, price } = product || {};
+    dispatch(
+      addItemToCart({
+        productId,
+        productName,
+        price,
+        quantity: 1,
+      })
+    );
+  };
   return (
     <>
       <Image
@@ -218,7 +234,14 @@ const ProductDetailsPage = () => {
               </Text>
             </Group>
 
-            <Button fullWidth mt="md" color="orange" radius="xl" size="md">
+            <Button
+              fullWidth
+              mt="md"
+              color="orange"
+              radius="xl"
+              size="md"
+              onClick={() => handleAddToCart(product)}
+            >
               Add to Cart
             </Button>
           </Grid.Col>

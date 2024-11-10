@@ -11,6 +11,8 @@ import "@mantine/notifications/styles.css";
 import "@mantine/carousel/styles.css";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
+import store from "./redux/store.ts";
+import { Provider } from "react-redux";
 const theme = createTheme({
   colors: {
     orange: [
@@ -31,11 +33,13 @@ const theme = createTheme({
 });
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <MantineProvider theme={theme}>
-      <Notifications />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </MantineProvider>
+    <Provider store={store}>
+      <MantineProvider theme={theme}>
+        <Notifications />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </MantineProvider>
+    </Provider>
   </StrictMode>
 );

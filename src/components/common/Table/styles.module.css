@@ -1,0 +1,8 @@
+.paginationWrapper {
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.selectAble {
+  cursor: pointer;
+}

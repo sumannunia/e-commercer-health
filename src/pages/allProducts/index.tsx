@@ -10,10 +10,14 @@ import {
   Badge,
   Rating,
   Paper,
+  Loader,
 } from "@mantine/core";
 
 import styles from "./AllProductsPage.module.css";
 import { Link } from "react-router-dom";
+import { addItemToCart } from "../../redux/slices/cartSlice";
+import { useFetch } from "../../hooks/usefetch";
+import { useAppDispatch } from "../../redux/store";
 
 // Sample categories and product data
 const categories = [
@@ -119,7 +123,20 @@ const AllProductsPage = () => {
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category === "All" ? "" : category);
   };
-
+  const dispatch = useAppDispatch();
+  const { data, loading }: any = useFetch("/products");
+  console.log({ data });
+  const handleAddToCart = (product: any) => {
+    const { productId, productName, price } = product || {};
+    dispatch(
+      addItemToCart({
+        productId,
+        productName,
+        price,
+        quantity: 1,
+      })
+    );
+  };
   return (
     <div className={styles.pageWrapper}>
       {/* Full-width Background for Categories */}
@@ -159,14 +176,23 @@ const AllProductsPage = () => {
           {activeCategory ? activeCategory : "Bestsellers"}
         </Text>
         <Grid gutter="lg">
-          {activeCategory
+          {loading ? <Loader /> : ""}
+          {activeCategory && !loading
             ? products
                 .filter((item) => item.category === activeCategory)
                 .map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onCartClick={handleAddToCart}
+                  />
                 ))
             : products.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onCartClick={handleAddToCart}
+                />
               ))}
         </Grid>
       </Container>
@@ -176,12 +202,13 @@ const AllProductsPage = () => {
 
 interface ProductCardProps {
   product: Product;
+  onCartClick: (product: any) => void;
 }
 
-const ProductCard: FC<ProductCardProps> = ({ product }) => {
+const ProductCard: FC<ProductCardProps> = ({ product, onCartClick }) => {
   return (
     <Grid.Col span={{ xs: 12, sm: 6, md: 3 }}>
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/products/${product.id}`}>
         <Card shadow="sm" radius="md" withBorder className={styles.productCard}>
           <Card.Section>
             <Image
@@ -249,7 +276,12 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             ))}
           </Group>
 
-          <Button fullWidth mt="md" color="dark">
+          <Button
+            fullWidth
+            mt="md"
+            color="dark"
+            onClick={() => onCartClick(product)}
+          >
             Add to cart
           </Button>
         </Card>
