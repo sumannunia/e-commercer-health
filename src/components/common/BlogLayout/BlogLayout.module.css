@@ -1,0 +1,110 @@
+.blogContainer {
+  margin-top: 2rem;
+}
+
+.blogPaper {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.blogTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.blogSection {
+  margin-bottom: 3rem;
+  max-width: 1000px !important;
+}
+.blogSectionContent {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.listItem {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.blogHeading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.blogParagraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.blogList {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.blogTable {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blogImage {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain !important;
+}
+.tableWrapper {
+  margin-top: 2rem;
+}
+
+.tableContainer {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tableTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.table th {
+  font-weight: 600;
+  text-align: left;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.table tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+.equalWidthColumn {
+  width: 50%; /* Ensures equal width for both columns */
+  text-align: left;
+}
+.imageWrapper {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}

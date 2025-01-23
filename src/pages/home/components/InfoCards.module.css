@@ -1,0 +1,29 @@
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.cardContent {
+  padding: 16px;
+  text-align: center;
+}
+
+.cardTitle {
+  margin-top: 10px;
+  font-size: 1.3rem !important;
+  font-weight: 700;
+}
+
+.cardDescription {
+  margin-top: 8px;
+  color: #666;
+  font-weight: 500;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem !important;
+}

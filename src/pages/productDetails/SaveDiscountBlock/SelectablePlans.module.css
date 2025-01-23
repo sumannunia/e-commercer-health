@@ -1,0 +1,44 @@
+.container {
+  padding: 20px 0;
+}
+
+.planGroup {
+  display: flex;
+  flex-wrap: nowrap !important;
+  justify-content: center;
+  /* overflow: auto; */
+}
+
+.planCard {
+  width: 220px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: visible !important;
+}
+
+.planCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.planCard.selected {
+  border: 2px solid #4caf50;
+}
+
+.saveBadge {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: linear-gradient(135deg, #9ccc65, #8bc34a);
+  color: white;
+}
+
+.badgeButton {
+  background-color: black !important;
+  color: white;
+  font-weight: bold;
+}
+
+.badgeButton:hover {
+  background-color: #333;
+}

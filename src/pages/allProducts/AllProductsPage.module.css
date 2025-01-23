@@ -52,3 +52,13 @@
   text-align: center;
   margin-bottom: 1.5rem;
 }
+.linkCard {
+  text-decoration: none;
+}
+.cardBadge {
+  font-size: 8px !important;
+}
+.cardName {
+  text-decoration: none;
+  color: #000;
+}

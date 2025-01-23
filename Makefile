@@ -1,4 +1,4 @@
-NAME=e-commerce
+NAME=e-commerce-health
 VERSION=latest
 IMAGE_NAME=ui/${NAME}:${VERSION}
 
@@ -23,10 +23,10 @@ connect:
 	ssh -i "interns-web.pem" ubuntu@ec2-3-7-50-225.ap-south-1.compute.amazonaws.com
 
 tag:
-	@docker tag ui/e-commerce:latest sumannunia/e-commerce:latest
+	@docker tag ui/e-commerce-health:latest sumannunia/e-commerce-health:latest
 
 push:
-	@docker push sumannunia/e-commerce:latest
+	@docker push sumannunia/e-commerce-health:latest
 
 
 # ensure the docker is running in the desktop

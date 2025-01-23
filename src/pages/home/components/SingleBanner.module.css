@@ -1,0 +1,25 @@
+.banner {
+  background-image: url("../../../assets/images/banner-gut-health.jpg");
+  height: calc(45dvh);
+  background-position: left;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 4rem;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+}
+.banner::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.22);
+  z-index: 0;
+}

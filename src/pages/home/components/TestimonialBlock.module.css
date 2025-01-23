@@ -1,0 +1,18 @@
+.testimonialBackground {
+  background-color: #ffe4ee !important; /* Light pink background */
+  padding: 40px 0; /* Top and bottom padding */
+}
+
+.textContainer {
+  text-align: center; /* Center-align all header text */
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  text-align: center;
+}
+
+.cardDescription {
+  text-align: center;
+  color: dimgray; /* Dimmed text color */
+}

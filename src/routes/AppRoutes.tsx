@@ -1,7 +1,5 @@
 import { Suspense } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-
-import { Loader } from "@mantine/core";
 import Home from "../pages/home";
 import ErrorBoundary from "../utils/ErrorBoundary";
 
@@ -19,6 +17,17 @@ import RegisterPage from "../pages/RegisterSeller";
 import ProductDetailsPage from "../pages/productDetails";
 import AllProductsPage from "../pages/allProducts";
 import LoginForm from "../pages/LoginSeller";
+import Ingredients from "../pages/ingridients/Ingridents";
+import QuizPage from "../pages/quiz";
+import QuizSuccessPage from "../pages/quiz/SuccessPage";
+import QRCodePage from "../pages/qr-code";
+import DietAndGut from "../pages/science/DietAndGut";
+import { FaWhatsapp } from "react-icons/fa";
+import { Loader, Text } from "@mantine/core";
+import VedicAndGut from "../pages/science/VedicAndGut";
+import ClinicalGutTest from "../pages/science/ClinicalGutTest";
+import Fitness from "../pages/fitness";
+import Exercise from "../pages/fitness/Exercise";
 
 const AppRoutes = () => {
   return (
@@ -33,10 +42,23 @@ const AppRoutes = () => {
           <Route path="/login" element={<LoginUserForm />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/ingredients" element={<Ingredients />} />
           <Route path="/orders" element={<OrdersPage />} />
-          <Route path="/products" element={<Outlet />}>
+          <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/qr-app" element={<QRCodePage />} />
+          <Route path="/science/" element={<Outlet />}>
+            <Route path="diet-and-gut" element={<DietAndGut />} />
+            <Route path="vedic-and-gut" element={<VedicAndGut />} />
+            <Route path="clinical-gut-test" element={<ClinicalGutTest />} />
+          </Route>
+          <Route path="/fitness/" element={<Outlet />}>
+            <Route path="yoga" element={<Fitness />} />
+            <Route path="exercise" element={<Exercise />} />
+          </Route>
+          <Route path="/quiz-success" element={<QuizSuccessPage />} />
+          <Route path="/products/:productId" element={<Outlet />}>
             <Route index element={<AllProductsPage />} />
-            <Route path=":productId" element={<ProductDetailsPage />} />
+            <Route path=":productName" element={<ProductDetailsPage />} />
           </Route>
           <Route
             path="/admin"
@@ -57,6 +79,15 @@ const AppRoutes = () => {
         </Routes>
       </Suspense>
       {/* </Layout> */}
+      <div className="floatingIcon">
+        <a href="#" target="_blank" className="whatsappicon">
+          <span className="whatsappMessage">
+            DO YOU WANT A FREE CHAT WITH DIETICIAN
+          </span>
+          <FaWhatsapp size={50} color="#fff" />
+        </a>
+        <Text className="whatsappCallText">Call our Expert now</Text>
+      </div>
     </ErrorBoundary>
   );
 };

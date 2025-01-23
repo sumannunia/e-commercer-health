@@ -1,0 +1,57 @@
+.reviewsContainer {
+  margin-top: 20px;
+}
+
+.ratingsSection {
+  background-color: #f9f9f9;
+}
+
+.averageRating {
+  font-size: 32px;
+  color: #ff9900;
+}
+
+.starLabel {
+  width: 50px;
+  text-align: left;
+}
+
+.progressBar {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.percentageLabel {
+  width: 40px;
+  text-align: right;
+}
+
+.howRatingsCalculated {
+  font-size: 12px;
+  text-align: left;
+  padding: 0;
+  color: #0073e6;
+}
+
+.reviewProductSection {
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.topReviewsSection {
+  background-color: #fff;
+}
+
+.reviewCard {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.reviewCard:last-child {
+  border-bottom: none;
+}
+
+.helpfulButton {
+  font-size: 12px;
+  border-color: #d9d9d9;
+}

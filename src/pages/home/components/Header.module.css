@@ -1,6 +1,6 @@
 .header {
   background-color: #ffffff;
-  padding: 48px 0 0;
+  padding: 16px 0 0;
 }
 
 .container {
@@ -8,17 +8,39 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgb(212, 212, 212);
-  padding-bottom: 32px;
+  padding-bottom: 16px;
 }
 
 .logo {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .icons {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.hamburger {
+  display: none !important;
+}
+.rightSectionMobile {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .icons {
+    flex-direction: column !important;
+    align-items: start !important;
+  }
+  .hamburger {
+    display: block !important;
+  }
+  .rightSectionMobile {
+    display: none;
+  }
+  .secondaryNavDesktop {
+    display: none;
+  }
 }

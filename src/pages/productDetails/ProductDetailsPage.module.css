@@ -22,7 +22,20 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
+.activeImageWrapper {
+  position: relative;
+}
+.activeImageDesc {
+  position: absolute;
+  right: 50px;
+  top: 00px;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 .priceContainer {
   display: flex;
   align-items: baseline;
@@ -57,4 +70,29 @@
 
 .cardSection:hover .hiddenText {
   left: 0; /* Bring the text overlay into view */
+}
+.paperCard {
+  position: sticky;
+  top: 0;
+}
+.questionair {
+  border-top: 1px solid #d3d3d3ad;
+  border-bottom: 1px solid #d3d3d3ad;
+  padding: 2rem;
+  position: relative;
+  background-color: #f9f5f1 !important;
+  margin-bottom: 2rem;
+}
+.questionair::after {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 1px;
+  background-color: #d3d3d3ad;
+  content: "";
+  top: 0;
+  transform: translateX(-50%);
+}
+.title {
+  text-align: center;
 }

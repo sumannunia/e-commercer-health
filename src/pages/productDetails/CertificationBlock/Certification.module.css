@@ -1,0 +1,43 @@
+.certificationSection {
+  background-color: #fdfaf6 !important;
+  padding: 30px 0;
+}
+
+.statsGroup {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.statItem {
+  margin: 10px 20px;
+}
+
+.certificationsGrid {
+  margin-top: 20px;
+}
+
+.certItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.iconWrapper:hover {
+  transform: scale(1.1);
+}

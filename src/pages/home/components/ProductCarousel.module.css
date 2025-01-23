@@ -8,6 +8,7 @@
 .tabsList {
   justify-content: center !important;
   margin-bottom: 3rem !important;
+  gap: 0 !important;
 }
 
 .pills a {
@@ -22,11 +23,13 @@
   left: 10px;
   z-index: 1;
   font-size: 12px;
+  text-decoration: none;
 }
 
 .productName {
   font-size: 16px;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .carouselIndicator {
@@ -46,4 +49,14 @@ button {
 
 button:hover {
   background-color: #e09e00;
+}
+.titleBestSeller {
+  text-align: center;
+  margin-bottom: 3rem !important;
+}
+.linkCard {
+  text-decoration: none !important;
+}
+.tabNames {
+  font-size: 16px;
 }

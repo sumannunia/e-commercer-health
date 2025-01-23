@@ -1,0 +1,49 @@
+/* Main Top Bar Styling */
+.topBar {
+  background-color: #b03030;
+  color: #ffffff;
+  overflow: hidden; /* Ensures text is only visible within the container */
+  position: relative; /* For positioning the scrolling text */
+}
+
+/* Scrolling Text Container */
+.scrollingText {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap; /* Prevents the text from wrapping to the next line */
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Scrolling Text Animation */
+.scrollingTextContent {
+  display: inline-flex;
+  color: #fff !important;
+  animation: scrollLeft 15s linear infinite; /* Adjust the duration as needed */
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  transition: animation-play-state 0.2s ease; /* Smooth transition for play state */
+  font-weight: 600 !important;
+  gap: 20px;
+  padding-left: 100%; /* Ensures smooth looping */
+}
+
+/* Pause the Animation on Hover */
+.scrollingTextContent:hover {
+  animation-play-state: paused; /* Stops the animation */
+}
+
+/* Keyframes for Animation */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(
+      0%
+    ); /* Start just outside the container on the right */
+  }
+  to {
+    transform: translateX(-50%); /* Move all the way to the left */
+  }
+}

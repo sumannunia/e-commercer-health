@@ -10,10 +10,13 @@ import {
   Button,
   Divider,
   Text,
+  Title,
+  Drawer,
 } from "@mantine/core";
+import { RxHamburgerMenu } from "react-icons/rx";
 import {
   IconUser,
-  IconSearch,
+  // IconSearch,
   IconShoppingCart,
   IconMessageCircleUser,
 } from "@tabler/icons-react";
@@ -23,70 +26,99 @@ import { RootState, useAppDispatch } from "../../../redux/store";
 import { useSelector } from "react-redux";
 import { logout } from "../../../redux/slices/authSlice";
 import { fetchCart } from "../../../redux/slices/cartSlice";
-import { FaUser } from "react-icons/fa";
+
 import { MdLogout } from "react-icons/md";
-import { CiUser, CiLogin } from "react-icons/ci";
+import { CiLogin } from "react-icons/ci";
+import logo from "../../../assets/logo.png";
+import { useDisclosure } from "@mantine/hooks";
+import SecondaryNav from "./SecondaryNav";
 
 const Header = () => {
-  const [cartItemsCount] = useState(0); // Example count state
   const dispatch = useAppDispatch();
-  const user = useSelector((state: RootState) => state?.auth.user);
+  const [opened, { open, close }] = useDisclosure(false);
 
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate("/"); // Redirect to login page after logout
-  };
+  // const handleLogout = () => {
+  //   dispatch(logout());
+  //   navigate("/"); // Redirect to login page after logout
+  // };
   useEffect(() => {
     dispatch(fetchCart()); // Fetch cart items on component mount
   }, [dispatch]);
 
   return (
-    <div className={styles.header}>
-      <Container px="md" className={styles.container}>
-        {/* Empty Group to push logo to center */}
-        <Group className={styles.spacer} />
+    <>
+      <div className={styles.header}>
+        <Container px="md" size={"xl"} className={styles.container}>
+          {/* Empty Group to push logo to center */}
+          {/* <Group className={styles.spacer} /> */}
 
-        {/* Centered Logo Section */}
-        <div className={styles.logo}>
-          <Link to={"/"}>
-            <Image
-              src="https://www.cureveda.com/cdn/shop/files/logo_fea5eacc-99d3-464f-b814-8af6b2aac4a8.png?v=1705557999&width=250"
-              alt="Cureveda Logo"
-              width={230}
-              height={58}
-            />
-          </Link>
-        </div>
+          {/* Centered Logo Section */}
+          <Logo />
+          <Title></Title>
 
-        {/* Icons Section (Aligned to the Right) */}
-        <Group gap="md" className={styles.icons}>
-          {/* <ActionIcon
-            variant="transparent"
-            size="lg"
-            onClick={() => navigate("/login")}
+          {/* Icons Section (Aligned to the Right) */}
+          <div className={styles.rightSectionMobile}>
+            <RightSection />
+          </div>
+          <ActionIcon
+            variant="default"
+            onClick={open}
+            className={styles.hamburger}
           >
-            <IconUser size={24} stroke={1.5} />
-          </ActionIcon> */}
-          <UserMenu />
-          <ActionIcon variant="transparent" size="lg">
-            <IconSearch size={24} stroke={1.5} />
+            <RxHamburgerMenu />
           </ActionIcon>
-          <Indicator label={cartItemsCount} size={16} color="yellow" offset={5}>
-            <ActionIcon
-              variant="transparent"
-              size="lg"
-              onClick={() => navigate("/cart")}
-            >
-              <IconShoppingCart size={24} stroke={1.5} />
-            </ActionIcon>
-          </Indicator>
-        </Group>
-      </Container>
-    </div>
+        </Container>
+        <Drawer opened={opened} onClose={close} title={<Logo />}>
+          {/* Drawer content */}
+
+          <RightSection />
+
+          <SecondaryNav />
+        </Drawer>
+      </div>
+      <div className={styles.secondaryNavDesktop}>
+        <SecondaryNav />
+      </div>
+    </>
   );
 };
 
+const Logo = () => {
+  return (
+    <div className={styles.logo}>
+      <Link to={"/"}>
+        <Image
+          src={logo}
+          // src="https://www.cureveda.com/cdn/shop/files/logo_fea5eacc-99d3-464f-b814-8af6b2aac4a8.png?v=1705557999&width=250"
+          alt="Cureveda Logo"
+          width={230}
+          height={80}
+        />
+      </Link>
+    </div>
+  );
+};
+const RightSection = () => {
+  const [cartItemsCount] = useState(0); // Example count state
+  const navigate = useNavigate();
+  return (
+    <Group gap="md" className={styles.icons}>
+      <UserMenu />
+      {/* <ActionIcon variant="transparent" size="lg">
+            <IconSearch size={24} stroke={1.5} />
+          </ActionIcon> */}
+      <Indicator label={cartItemsCount} size={16} color="yellow" offset={5}>
+        <ActionIcon
+          variant="transparent"
+          size="lg"
+          onClick={() => navigate("/cart")}
+        >
+          <IconShoppingCart size={24} stroke={1.5} />
+        </ActionIcon>
+      </Indicator>
+    </Group>
+  );
+};
 export function UserMenu() {
   const dispatch = useAppDispatch();
   const user = useSelector((state: RootState) => state?.auth.user);

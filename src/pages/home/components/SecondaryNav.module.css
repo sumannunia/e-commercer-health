@@ -30,11 +30,25 @@
   font-weight: 600 !important;
   text-transform: uppercase;
 }
+.menuLink {
+  text-decoration: none;
+  font-weight: 500;
+}
+.directLinks {
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navGroup {
     gap: 8px;
     justify-content: center;
+    flex-direction: column !important;
+    justify-content: start !important;
+
+    align-items: start !important;
   }
   .navItem {
     font-size: 13px;

@@ -1,34 +1,36 @@
 import { Container, Flex, Text } from "@mantine/core";
-import { IconPhone } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
+import styles from "./TopBar.module.css";
 
 const TopBar = () => {
   return (
-    <div style={{ backgroundColor: "#b03030", color: "#ffffff" }}>
-      <Container size="xl" px="md" style={{ height: "35px" }}>
+    <div className={styles.topBar}>
+      <Container size="xl" px="md" style={{ height: "55px" }}>
         <Flex justify="center" align="center" style={{ height: "100%" }}>
-          {/* Left Section: Phone Icon and Number */}
-          <Flex
-            align="center"
-            gap="xs"
-            style={{ position: "absolute", left: 20 }}
-          >
-            <IconPhone size={16} />
-            <Text size="sm" style={{ fontWeight: 500 }}>
-              9691997997
-            </Text>
-          </Flex>
-
-          {/* Center Section: Promotional Text */}
-          <Text
-            size="sm"
-            style={{
-              fontWeight: 500,
-              textTransform: "uppercase",
-              textAlign: "center",
-            }}
-          >
-            Flat 40% off | Sitewide | Includes 5% prepaid discount
-          </Text>
+          <div className={styles.scrollingText}>
+            <Link to={"/quiz"} style={{ textDecoration: "none" }}>
+              <Text size="lg" className={styles.scrollingTextContent}>
+                <span>
+                  Get your free Gut Score and claim your free diet plan
+                </span>
+                <span>|</span> <span>MINDFUL EATING – FREE CALORY COUNTER</span>
+                <span>|</span>
+                <span> FREE DIET PLAN</span> <span>|</span>
+                <span>
+                  Get your free Gut Score and claim your free diet plan
+                </span>
+                <span>|</span> <span>MINDFUL EATING – FREE CALORY COUNTER</span>
+                <span>|</span>
+                <span> FREE DIET PLAN</span> <span>|</span>
+                <span>
+                  Get your free Gut Score and claim your free diet plan
+                </span>
+                <span>|</span> <span>MINDFUL EATING – FREE CALORY COUNTER</span>
+                <span>|</span>
+                <span> FREE DIET PLAN</span>
+              </Text>
+            </Link>
+          </div>
         </Flex>
       </Container>
     </div>

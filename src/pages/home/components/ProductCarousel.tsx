@@ -8,85 +8,126 @@ import {
   Button,
   Group,
   Container,
+  Title,
+  Rating,
 } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import styles from "./ProductCarousel.module.css"; // Custom CSS module
-
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
+import { categories } from "../../../constants/constants";
+import { Link } from "react-router-dom";
 // Sample data for products
 const products = [
   {
     id: 1,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card4_10020226-24eb-40f6-be94-3021ddcb9b6b.jpg?v=1707803636&width=800",
-    name: "Cureveda Pureprash - 500gm",
+    name: "GUT EXPERT - Gastro Comfort",
     description: "Herbal Sugar Free Chyawanprash ",
     price: 419,
     oldPrice: 645,
     discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "gastro-comfort",
   },
   {
     id: 2,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card1_fa830874-d45b-48cc-8374-b75f0f3d1909.jpg?v=1707671989&width=800",
-    name: "Cureveda Vision - Eye Health",
+    name: "GUT EXPERT - LOOSE CONTROL ",
     description: "Eye Supplement With Lutein",
     price: 549,
     oldPrice: 845,
     discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "loose-control",
   },
   {
-    id: 2,
+    id: 3,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card1_fa830874-d45b-48cc-8374-b75f0f3d1909.jpg?v=1707671989&width=800",
-    name: "Cureveda Vision - Eye Health",
+    name: "GUT EXPERT - Soothe Gut",
     description: "Eye Supplement With Lutein",
     price: 549,
     oldPrice: 845,
     discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "soothe-gut",
   },
   {
-    id: 2,
+    id: 4,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card4_10020226-24eb-40f6-be94-3021ddcb9b6b.jpg?v=1707803636&width=800",
-    name: "Cureveda Vision - Eye Health",
+    name: "GUT EXPERT - Rest n Calm",
     description: "Eye Supplement With Lutein",
     price: 549,
     oldPrice: 845,
     discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "rest-n-calm",
   },
   {
-    id: 2,
+    id: 5,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card4_10020226-24eb-40f6-be94-3021ddcb9b6b.jpg?v=1707803636&width=800",
-    name: "Cureveda Vision - Eye Health",
+    name: "GUT EXPERT - BloatJoy ",
     description: "Eye Supplement With Lutein",
     price: 549,
     oldPrice: 845,
     discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "bloat-joy",
   },
   {
-    id: 2,
+    id: 6,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card1_fa830874-d45b-48cc-8374-b75f0f3d1909.jpg?v=1707671989&width=800",
-    name: "Cureveda Vision - Eye Health",
+    name: "GUT EXPERT - Shred Max",
     description: "Eye Supplement With Lutein",
     price: 549,
     oldPrice: 845,
     discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "shred-max",
+  },
+  {
+    id: 7,
+    image:
+      "https://www.cureveda.com/cdn/shop/files/Card1_fa830874-d45b-48cc-8374-b75f0f3d1909.jpg?v=1707671989&width=800",
+    name: "GUT EXPERT - LIVER Comfy",
+    description: "Eye Supplement With Lutein",
+    price: 549,
+    oldPrice: 845,
+    discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "liver-comfy",
+  },
+  {
+    id: 8,
+    image:
+      "https://www.cureveda.com/cdn/shop/files/Card1_fa830874-d45b-48cc-8374-b75f0f3d1909.jpg?v=1707671989&width=800",
+    name: "GUT EXPERT - FLORA PRE+PROBIOTIC",
+    description: "Eye Supplement With Lutein",
+    price: 549,
+    oldPrice: 845,
+    discount: "35% off",
+    rating: 4.4,
+    reviews: 2233,
+    link: "flora-pre-probiotic",
   },
   // Add more product items as needed
 ];
 
-// Categories for pills
-const categories = [
-  "Indignation",
-  "Acidity",
-  "Constipation",
-  "Bloating",
-  "Liver Care",
-];
-
 const ProductCarousel = () => {
+  const autoplay = useRef<any>(Autoplay({ delay: 2000 }));
   return (
     <Container className={styles.carouselContainer} size={"lg"}>
       {/* Pills (Categories) */}
@@ -98,19 +139,21 @@ const ProductCarousel = () => {
       >
         <Tabs.List className={styles.tabsList}>
           {categories.map((category) => (
-            <Tabs.Tab value={category} key={category}>
+            <Tabs.Tab value={category.label} key={category.label}>
               <a
-                href={`/products?category=${category}`}
+                className={styles.tabNames}
+                href={`/products/${category.link}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {category}
+                {category.label}
               </a>
             </Tabs.Tab>
           ))}
         </Tabs.List>
       </Tabs>
 
+      <Title className={styles.titleBestSeller}>Out Best Sellers</Title>
       {/* Product Carousel */}
       <Container size={"lg"}>
         <Carousel
@@ -121,6 +164,7 @@ const ProductCarousel = () => {
           previousControlIcon={<IconChevronLeft size={24} />}
           nextControlIcon={<IconChevronRight size={24} />}
           classNames={{ indicator: styles.carouselIndicator }}
+          plugins={[autoplay.current]}
         >
           {products.map((product) => (
             <Carousel.Slide key={product.id}>
@@ -144,22 +188,27 @@ const ProductCarousel = () => {
                 )}
 
                 {/* Product Image */}
+
                 <Card.Section>
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    height={160}
-                    fit="cover"
-                  />
+                  <Link to={`products/${product.id}/${product.link}`}>
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      height={160}
+                      fit="cover"
+                    />
+                  </Link>
                 </Card.Section>
 
                 {/* Product Details */}
                 <Text size="lg" mt="md" className={styles.productName}>
                   {product.name}
                 </Text>
-                <Text size="sm" color="dimmed">
-                  {product.description}
-                </Text>
+                <Text size="sm">{product.description}</Text>
+                <Group align="center" mt="sm" gap="xs">
+                  <Rating value={product.rating} readOnly />
+                  <Text size="sm">({product.reviews} reviews)</Text>
+                </Group>
 
                 {/* Pricing */}
                 <Group justify="space-between" mt="md">
