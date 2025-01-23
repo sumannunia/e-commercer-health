@@ -5,7 +5,7 @@ import styles from "./SecondaryNav.module.css";
 import { Link } from "react-router-dom";
 import { FaEllipsisVertical } from "react-icons/fa6";
 
-const menuItems = {
+const menuItems: any = {
   Science: [
     { label: "Diet and Gut", link: "/science/diet-and-gut" },
     { label: "Vedic and GUT", link: "/science/vedic-and-gut" },
@@ -63,18 +63,20 @@ const SecondaryNav: React.FC = () => {
                   </div>
                 </Menu.Target>
                 <Menu.Dropdown>
-                  {menuItems[label as keyof typeof menuItems].map((item) => (
-                    <Link to={item.link} className={styles.menuLink}>
-                      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-                    </Link>
-                  ))}
+                  {menuItems[label as keyof typeof menuItems]?.map(
+                    (item: any) => (
+                      <Link to={item.link} className={styles.menuLink}>
+                        <Menu.Item key={item.link}>{item.label}</Menu.Item>
+                      </Link>
+                    )
+                  )}
                 </Menu.Dropdown>
               </Menu>
             ) : (
               <>
                 <Link
                   className={styles.directLinks}
-                  to={`${menuItems[label as keyof typeof menuItems].link}`}
+                  to={`${menuItems[label as keyof typeof menuItems]?.link}`}
                 >
                   {label}
                 </Link>
