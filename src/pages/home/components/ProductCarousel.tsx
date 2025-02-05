@@ -126,10 +126,10 @@ const products = [
   // Add more product items as needed
 ];
 
-const ProductCarousel = () => {
+const ProductCarousel = ({ id }: { id?: string }) => {
   const autoplay = useRef<any>(Autoplay({ delay: 2000 }));
   return (
-    <Container className={styles.carouselContainer} size={"lg"}>
+    <Container className={styles.carouselContainer} size={"lg"} id={id}>
       {/* Pills (Categories) */}
       <Tabs
         variant="pills"

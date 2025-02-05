@@ -48,6 +48,30 @@ const blogData = [
     content:
       "Dietary practices in Vedic medicine emphasize the consumption of fresh, whole foods, tailored to an individual's dosha. Herbal remedies, such as turmeric and ginger,   ( Akash add pics of these ingredients ) are also frequently used to boost digestive health and combat inflammation. Furthermore, mindfulness practices like yoga and meditation are integrated to reduce stress, which can negatively impact gut health. By nurturing the gut through Vedic principles, individuals can achieve holistic wellness, enhancing both physical vitality and mental clarity.",
   },
+  {
+    type: "reference",
+    reference: [
+      {
+        text: "Research shows that your microbiome—a bustling community of bacteria living in your gastrointestinal tract health—impacts everything from your digestion to your immunity and mood.",
+        link: "https://mapi.com/blogs/articles/ayurveda-the-importance-of-gut-health",
+      },
+      {
+        text: "ditional uses of Triphala. It provides therapeutic value for multiple pathologies. Many scientiﬁc studies have reported evidence-based validation of various tra-ditional uses of Triphala. It provides therapeutic value formultiple pathologies.",
+        link: "https://www.researchgate.net/publication/318377337_Therapeutic_Uses_of_Triphala_in_Ayurvedic_Medicine",
+      },
+    ],
+  },
+  // {
+  //   type: "reference",
+  //   reference: [
+  //     { text: "", link: "" },
+  //     { text: "", link: "" },
+  //     { text: "", link: "" },
+  //     { text: "", link: "" },
+  //     { text: "", link: "" },
+  //     { text: "", link: "" },
+  //   ],
+  // },
 ];
 
 const VedicAndGut = () => {

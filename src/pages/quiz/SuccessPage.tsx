@@ -36,9 +36,9 @@ const QuizSuccessPage = () => {
           Congratulations!
         </Text>
         <Text size="md" mb="lg" style={{ fontWeight: "700" }}>
-          You’ve successfully completed the quiz. Thank you for sharing your
-          responses. We’re excited to provide personalized insights tailored
-          just for you!
+          You have done well. Your gut score report is being processed. Our
+          expert is soon going to reach out to explain the report and give you
+          access to free diet plan.
         </Text>
       </Card>
     </Container>

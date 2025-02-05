@@ -1,6 +1,4 @@
 import BlogLayout from "../../components/common/BlogLayout";
-import PdfToImages from "../../components/common/Pdf";
-import yogaPdf from "../../assets/pdf/30-days-of-yoga.pdf";
 import impOfDiet from "../../assets/fitness/imp_of_diet.png";
 import vegetables from "../../assets/fitness/vegetables.png";
 
@@ -354,18 +352,99 @@ const blogData = [
       "Replace fried snacks with baked or roasted options.",
       "Choose unsweetened herbal teas, coconut water, or infused water over sugary sodas.",
       "Roasted Chickpeas: Toss boiled chickpeas with olive oil and spices; roast until crispy",
-      "Herb Infused Soup: Add fresh coriander, basil, and mint to vegetable soup for a fragrant, flavorful twist.",
+      "Infused Water: Add cucumber slices, mint leaves, and lemon wedges to a pitcher of water for a refreshing drink.",
     ],
   },
+  {
+    type: "paragraph",
+    strong: "General Tips for Healthy Cooking",
+    content: "",
+  },
+  {
+    type: "list",
+    items: [
+      "Portion Control: Use appropriate serving sizes to avoid overeating",
+      "Cooking Methods: Prefer steaming, grilling, or boiling over deep frying to preserve nutrients and reduce fat intake",
+      "Avoid Excess Salt and Sugar: Use natural sweeteners like honey or jaggery sparingly.",
+      "Meal Preparation: Plan meals in advance to include all food groups and reduce reliance on processed foods.",
+    ],
+  },
+  {
+    type: "title",
+    level: 2,
+    content: "Example: A Balanced Plate Using Healthy Ingredients",
+  },
+  {
+    type: "paragraph",
+    strong: "Breakfast",
+    content: "",
+  },
+  {
+    type: "list",
+    items: [
+      "Vegetable Poha with groundnuts (cereals, vegetables, fats).",
+      "A glass of unsweetened almond milk (calcium, protein).",
+    ],
+  },
+  {
+    type: "paragraph",
+    strong: "Lunch",
+    content: "",
+  },
+  {
+    type: "list",
+    items: [
+      "Brown rice (cereals), dal (pulses), sautéed spinach (vegetables), and curd (dairy).",
+      "A small portion of seasonal fruit like papaya or watermelon.",
+    ],
+  },
+  {
+    type: "paragraph",
+    strong: "Dinner",
+    content: "",
+  },
+  {
+    type: "list",
+    items: [
+      "Whole wheat roti, grilled chicken/tofu, steamed broccoli, and carrot salad",
+    ],
+  },
+  {
+    type: "paragraph",
+    strong: "",
+    content:
+      "By focusing on fresh, diverse, and minimally processed ingredients, you can create meals that are both nutritious and delicious",
+  },
+  {
+    type: "title",
+    level: 2,
+    content: "Conclusion",
+  },
+  {
+    type: "paragraph",
+    strong: "",
+    content:
+      "Achieving optimal nutrition involves clear goals, actionable guidelines, and understanding dietary needs across life stages. By maintaining a balanced diet, ensuring maternal and infant nutrition, supporting growth, and preventing chronic diseases, individuals can promote health and longevity.",
+  },
+  {
+    type: "paragraph",
+    strong: "",
+    content:
+      "Following the dietary guidelines—such as eating a variety of foods, moderating fats, consuming vegetables and fruits, and adopting safe cooking practices—helps meet nutritional needs. Tools like the My Plate (NIN) framework and mindful ingredient selection make creating healthy, balanced meals simple and effective.",
+  },
+  {
+    type: "paragraph",
+    strong: "",
+    content:
+      "A holistic approach to nutrition fosters physical and mental well-being, improving quality of life at every stage.",
+  },
 ];
-
-const Fitness = () => {
+const Recipies = () => {
   return (
     <>
       <BlogLayout data={blogData} />
-      <PdfToImages fileUrl={yogaPdf} />
     </>
   );
 };
 
-export default Fitness;
+export default Recipies;

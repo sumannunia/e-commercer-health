@@ -242,7 +242,7 @@ const products: Product[] = [
     category: ["Bloating Relief management Pack "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["bloating"],
+    tag: ["bloating", "gut-testing"],
     link: "liver-comfy",
   },
 

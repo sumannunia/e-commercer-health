@@ -51,11 +51,17 @@
   font-size: 12px;
   font-weight: 600;
   bottom: -25px;
-  width: 16ch;
-  left: -40px;
+  width: 22ch;
+  left: -86px;
   padding: 4px;
   text-align: center;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 6px #d3d3d3ad;
+}
+
+.rpv-core__minimal-button[data-testid="get-file__download-button"],
+.rpv-core__minimal-button[data-testid="open__button"],
+.rpv-core__minimal-button[data-testid="print__button"] {
+  display: none;
 }

@@ -75,6 +75,27 @@ const BlogLayout = ({ data }: { data: any[] }) => {
             ))}
           </List>
         );
+      case "reference":
+        return (
+          <>
+            <Title mt={"lg"} size={"md"} fw={"700"}>
+              {" "}
+              References and Good Reads{" "}
+            </Title>
+            <List>
+              {block.reference?.map((ref: { text: string; link: string }) => {
+                return (
+                  <List.Item style={{ fontStyle: "italic" }}>
+                    {ref.text}
+                    <a style={{ display: "block" }} href={ref.link}>
+                      {ref.link}
+                    </a>
+                  </List.Item>
+                );
+              })}
+            </List>
+          </>
+        );
 
       case "table":
         return (

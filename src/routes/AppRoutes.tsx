@@ -28,6 +28,8 @@ import VedicAndGut from "../pages/science/VedicAndGut";
 import ClinicalGutTest from "../pages/science/ClinicalGutTest";
 import Fitness from "../pages/fitness";
 import Exercise from "../pages/fitness/Exercise";
+import Recipies from "../pages/recipies";
+import PreProBiotics from "../pages/pre-pro-biotics";
 
 const AppRoutes = () => {
   return (
@@ -54,6 +56,12 @@ const AppRoutes = () => {
           <Route path="/fitness/" element={<Outlet />}>
             <Route path="yoga" element={<Fitness />} />
             <Route path="exercise" element={<Exercise />} />
+          </Route>
+          <Route path="/pre-pro-biotics/" element={<Outlet />}>
+            <Route index element={<PreProBiotics />} />
+          </Route>
+          <Route path="/recipes/" element={<Outlet />}>
+            <Route path="healthy" element={<Recipies />} />
           </Route>
           <Route path="/quiz-success" element={<QuizSuccessPage />} />
           <Route path="/products/:productId" element={<Outlet />}>
@@ -86,7 +94,7 @@ const AppRoutes = () => {
           </span>
           <FaWhatsapp size={50} color="#fff" />
         </a>
-        <Text className="whatsappCallText">Call our Expert now</Text>
+        <Text className="whatsappCallText">Call our Expert now for help</Text>
       </div>
     </ErrorBoundary>
   );

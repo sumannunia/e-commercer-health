@@ -1,6 +1,7 @@
 import TopBar from "./pages/home/components/Topbar";
 import Header from "./pages/home/components/Header";
 import AppRoutes from "./routes/AppRoutes";
+import Footer from "./components/common/Footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       {/* <SecondaryNav /> */}
       <AppRoutes />
+      <Footer />
     </>
   );
 }

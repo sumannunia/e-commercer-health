@@ -55,15 +55,28 @@ const data = [
   // },
 ];
 
-const ServiceCards = () => {
+const ServiceCards = ({ id }: { id?: string }) => {
   return (
-    <Container size="lg" px="md" mb={"xl"}>
+    <Container size="lg" px="md" mb={"xl"} fluid id={id}>
       {/* <Title className={styles.title}>Our Services</Title> */}
       <Grid gutter="md" justify="center" mt={10}>
         {data.map((item, index) => (
-          <Grid.Col span={{ md: 4, sm: 12 }} key={index}>
-            <Link to="/qr-app" style={{ textDecoration: "none" }}>
-              <Card shadow="sm" radius="md" className={styles.card} pb={0}>
+          <Grid.Col span={{ md: 2, sm: 12 }} key={index}>
+            <Link
+              to="/qr-app"
+              style={{
+                textDecoration: "none",
+                height: "100%",
+                display: "block",
+              }}
+            >
+              <Card
+                shadow="sm"
+                radius="md"
+                className={styles.card}
+                pb={0}
+                h={"100%"}
+              >
                 <Card.Section>
                   <Image
                     src={item.image}

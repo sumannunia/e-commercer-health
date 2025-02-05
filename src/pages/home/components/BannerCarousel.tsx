@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Image } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import styles from "./BannerCarousel.module.css";
-import liver from "../../../assets/images/gut-health-img/gut-Recovered.jpg";
-import acidity from "../../../assets/images/gut-health-img/colorie.jpg";
-import bloating from "../../../assets/images/gut-health-img/diet-plan.png";
-import constipation from "../../../assets/images/gut-health-img/gut-Recovered.jpg";
+import liver from "../../../assets/images/gut-health-img/colorie.jpg";
+import acidity from "../../../assets/images/gut-health-img/diet-plan.png";
+import bloating from "../../../assets/images/gut-health-img/gut-Recovered.jpg";
+import constipation from "../../../assets/images/gut-health-img/gut.jpg";
 import indigestion from "../../../assets/images/gut-health-img/herble-product.jpg";
 const banners = [
   {

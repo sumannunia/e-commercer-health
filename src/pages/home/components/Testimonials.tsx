@@ -34,9 +34,9 @@ const testimonials = [
   },
 ];
 
-const TestimonialBlock = () => {
+const TestimonialBlock = ({ id }: { id?: string }) => {
   return (
-    <Paper className={styles.testimonialBackground}>
+    <Paper className={styles.testimonialBackground} id={id}>
       <Container size="lg" px="md">
         <div className={styles.textContainer}>
           <Text size="lg" fw={500} mb="sm">

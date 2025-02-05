@@ -10,7 +10,6 @@ import {
   Button,
   Divider,
   Text,
-  Title,
   Drawer,
 } from "@mantine/core";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -29,9 +28,24 @@ import { fetchCart } from "../../../redux/slices/cartSlice";
 
 import { MdLogout } from "react-icons/md";
 import { CiLogin } from "react-icons/ci";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logos/logo_text.png";
+import logo2 from "../../../assets/logos/logo.png";
 import { useDisclosure } from "@mantine/hooks";
 import SecondaryNav from "./SecondaryNav";
+const ellipsisData = [
+  {
+    label: "Diagnostic Gut testing",
+    link: "/diagnostic-gut-testing",
+  },
+  {
+    label: "Liver Detox",
+    link: "/liver-detox",
+  },
+  {
+    label: "Individualised Diet plan",
+    link: "/dndividualised-diet-plan",
+  },
+];
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -54,7 +68,9 @@ const Header = () => {
 
           {/* Centered Logo Section */}
           <Logo />
-          <Title></Title>
+          <Group>
+            <Image src={logo2} width={"90px"} className={styles.logoCenter} />
+          </Group>
 
           {/* Icons Section (Aligned to the Right) */}
           <div className={styles.rightSectionMobile}>
@@ -93,6 +109,7 @@ const Logo = () => {
           alt="Cureveda Logo"
           width={230}
           height={80}
+          className={styles.logoMain}
         />
       </Link>
     </div>
@@ -103,6 +120,13 @@ const RightSection = () => {
   const navigate = useNavigate();
   return (
     <Group gap="md" className={styles.icons}>
+      {ellipsisData.map((elepseItem: { link: string; label: string }) => (
+        <Link to={elepseItem.link} className={styles.linkItem}>
+          <Text className={styles.topLinks} fw={400}>
+            {elepseItem.label}
+          </Text>
+        </Link>
+      ))}
       <UserMenu />
       {/* <ActionIcon variant="transparent" size="lg">
             <IconSearch size={24} stroke={1.5} />

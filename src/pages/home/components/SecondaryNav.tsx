@@ -3,7 +3,7 @@ import { Container, Group, Menu, Text } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import styles from "./SecondaryNav.module.css";
 import { Link } from "react-router-dom";
-import { FaEllipsisVertical } from "react-icons/fa6";
+// import { FaEllipsisVertical } from "react-icons/fa6";
 
 const menuItems: any = {
   Science: [
@@ -16,10 +16,11 @@ const menuItems: any = {
     { label: "Yoga", link: "/fitness/yoga" },
     { label: "Exercise", link: "/fitness/exercise" },
   ],
-  Recipes: [
-    { label: "Healthy Recipes", link: "/recipes/healthy" },
-    { label: "Quick Meals", link: "/recipes/quick-meals" },
-  ],
+  Recipes: { link: "/recipes/healthy" },
+  // Recipes: [
+  //   { label: "Healthy Recipes", link: "/recipes/healthy" },
+  //   { label: "Quick Meals", link: "/recipes/quick-meals" },
+  // ],
 
   "Gut Health Products": [
     {
@@ -33,21 +34,21 @@ const menuItems: any = {
   ],
   "Pre and Pro Biotic": { link: "products/pre-pro-biotic" },
 };
-const ellipsisData = [
-  {
-    label: "Diagnostic Get testing",
-    link: "/diagnostic-get-testing",
-  },
-  {
-    label: "Liver Detox",
-    link: "/liver-detox",
-  },
-  {
-    label: "Individualised Diet plan",
-    link: "/dndividualised-diet-plan",
-  },
-];
 
+// const ellipsisData = [
+//   {
+//     label: "Diagnostic Get testing",
+//     link: "/diagnostic-get-testing",
+//   },
+//   {
+//     label: "Liver Detox",
+//     link: "/liver-detox",
+//   },
+//   {
+//     label: "Individualised Diet plan",
+//     link: "/dndividualised-diet-plan",
+//   },
+// ];
 const SecondaryNav: React.FC = () => {
   return (
     <div className={styles.secondaryNav}>
@@ -83,7 +84,7 @@ const SecondaryNav: React.FC = () => {
               </>
             )
           )}
-          <Menu trigger="hover">
+          {/* <Menu trigger="hover">
             <Menu.Target>
               <div className={styles.navItem}>
                 <FaEllipsisVertical size={16} />
@@ -96,7 +97,7 @@ const SecondaryNav: React.FC = () => {
                 </Link>
               ))}
             </Menu.Dropdown>
-          </Menu>
+          </Menu> */}
         </Group>
       </Container>
     </div>

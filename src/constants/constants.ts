@@ -11,4 +11,5 @@ export const categories = [
   { link: "weight-loss", label: "Weight Loss" },
   { link: "liver-detox", label: "Liver Detox" },
   { link: "combos", label: "Combos" },
+  { link: "gut-testing", label: "Gut Testing" },
 ];
