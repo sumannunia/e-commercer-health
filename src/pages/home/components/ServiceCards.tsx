@@ -1,4 +1,12 @@
-import { Container, Grid, Card, Text, Image } from "@mantine/core";
+import {
+  Container,
+  Grid,
+  Card,
+  Text,
+  Image,
+  Title,
+  Button,
+} from "@mantine/core";
 import styles from "./InfoCards.module.css";
 import yoga from "../../../assets/images/yoga.webp";
 import calorie from "../../../assets/images/calorie.webp";
@@ -8,6 +16,7 @@ import diagnostic from "../../../assets/images/diagnostic.webp";
 import probiotic from "../../../assets/images/probiotic.webp";
 import vedic from "../../../assets/images/vedic.webp";
 import { Link } from "react-router-dom";
+import { IconArrowRight } from "@tabler/icons-react";
 // Data array for the cards
 const data = [
   {
@@ -57,11 +66,18 @@ const data = [
 
 const ServiceCards = ({ id }: { id?: string }) => {
   return (
-    <Container size="lg" px="md" mb={"xl"} fluid id={id}>
-      {/* <Title className={styles.title}>Our Services</Title> */}
+    <Container size="lg" id={id} py={"100"}>
+      <Title className={styles.title}>Our Categories</Title>
+      <Text maw={961} ta={"center"} mx={"auto"} mb={70}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit,
+        voluptates quis nostrum consequatur nisi cupiditate deleniti aliquam
+        ipsa dolorem animi eaque magni harum exercitationem, odit praesentium
+        inventore cumque voluptas quasi?
+      </Text>
+
       <Grid gutter="md" justify="center" mt={10}>
         {data.map((item, index) => (
-          <Grid.Col span={{ md: 2, sm: 12 }} key={index}>
+          <Grid.Col span={{ md: 4, lg: 3, sm: 12 }} key={index}>
             <Link
               to="/qr-app"
               style={{
@@ -70,13 +86,7 @@ const ServiceCards = ({ id }: { id?: string }) => {
                 display: "block",
               }}
             >
-              <Card
-                shadow="sm"
-                radius="md"
-                className={styles.card}
-                pb={0}
-                h={"100%"}
-              >
+              <Card radius="md" className={styles.card} pb={0} h={"100%"}>
                 <Card.Section>
                   <Image
                     src={item.image}
@@ -86,12 +96,17 @@ const ServiceCards = ({ id }: { id?: string }) => {
                   />
                 </Card.Section>
                 <div className={styles.cardContent}>
-                  <Text size="lg" className={styles.cardTitle}>
-                    {item.title}
-                  </Text>
-                  <Text size="sm" className={styles.cardDescription}>
-                    {item.description}
-                  </Text>
+                  <div>
+                    <Text size="lg" className={styles.cardTitle}>
+                      {item.title}
+                    </Text>
+                    <Text size="sm" className={styles.cardDescription}>
+                      {item.description}
+                    </Text>
+                  </div>
+                  <Button fullWidth rightSection={<IconArrowRight />}>
+                    View More
+                  </Button>
                 </div>
               </Card>
             </Link>

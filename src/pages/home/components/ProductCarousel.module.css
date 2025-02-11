@@ -1,13 +1,16 @@
 .carouselContainer {
-  padding: 20px 0;
 }
-
+.sectionWrapper {
+  background-color: #e73c560a;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 .pills {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .tabsList {
   justify-content: center !important;
-  margin-bottom: 3rem !important;
+  /* margin-bottom: 3rem !important; */
   gap: 0 !important;
 }
 
@@ -15,6 +18,8 @@
   text-decoration: none;
   color: inherit;
   font-weight: 600 !important;
+  padding: 10px;
+  display: block;
 }
 
 .discountBadge {
@@ -42,13 +47,13 @@
 }
 
 button {
-  background-color: #f8b400;
+  /* background-color: #f8b400; */
   color: white;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #e09e00;
+  /* background-color: #e09e00; */
 }
 .titleBestSeller {
   text-align: center;

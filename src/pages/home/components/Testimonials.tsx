@@ -1,14 +1,15 @@
 import {
   Container,
-  Grid,
   Card,
   Text,
   Badge,
   Group,
   Rating,
   Paper,
+  Title,
 } from "@mantine/core";
 import styles from "./TestimonialBlock.module.css";
+import { Carousel } from "@mantine/carousel";
 
 const testimonials = [
   {
@@ -32,6 +33,27 @@ const testimonials = [
       '"My bloating has subsided, I have less reactions from foods I was once intolerant to. I will be continuing to buy this product. Health is wealth, so yes the great effects are worth the price."',
     name: "Andrea W.",
   },
+  {
+    rating: 5,
+    title: "Goodbye food intolerances",
+    description:
+      '"My bloating has subsided, I have less reactions from foods I was once intolerant to. I will be continuing to buy this product. Health is wealth, so yes the great effects are worth the price."',
+    name: "Andrea W.",
+  },
+  {
+    rating: 5,
+    title: "Goodbye food intolerances",
+    description:
+      '"My bloating has subsided, I have less reactions from foods I was once intolerant to. I will be continuing to buy this product. Health is wealth, so yes the great effects are worth the price."',
+    name: "Andrea W.",
+  },
+  {
+    rating: 5,
+    title: "Goodbye food intolerances",
+    description:
+      '"My bloating has subsided, I have less reactions from foods I was once intolerant to. I will be continuing to buy this product. Health is wealth, so yes the great effects are worth the price."',
+    name: "Andrea W.",
+  },
 ];
 
 const TestimonialBlock = ({ id }: { id?: string }) => {
@@ -39,18 +61,25 @@ const TestimonialBlock = ({ id }: { id?: string }) => {
     <Paper className={styles.testimonialBackground} id={id}>
       <Container size="lg" px="md">
         <div className={styles.textContainer}>
+          <Title ta={"center"}>What Our Customers Say</Title>
           <Text size="lg" fw={500} mb="sm">
-            Real Results From Our Customers
-          </Text>
-          <Text size="xl" fw={700} mb="lg">
-            2.4 Million+ Women Are Making New Long Lasting Positive Health
-            Changes
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+            libero, ad illum itaque quibusdam labore numquam ipsa dolores
+            consequatur! Aspernatur eaque nulla necessitatibus ducimus
+            repellendus excepturi dignissimos amet laborum ullam!
           </Text>
         </div>
-        <Grid gutter="lg">
+        <Carousel
+          slideSize="30%"
+          // height={200}
+          slideGap="md"
+          withControls={false}
+          align="start"
+          slidesToScroll={1}
+        >
           {testimonials.map((testimonial, index) => (
-            <Grid.Col key={index} span={{ xs: 12, sm: 6, md: 4 }}>
-              <Card shadow="sm" radius="md" withBorder>
+            <Carousel.Slide key={"carouselTestimonial" + index}>
+              <Card shadow="sm" radius="md" withBorder bg={"#E73C560A"}>
                 <Group align="center" justify="center" mb="xs">
                   <Rating value={testimonial.rating} readOnly size="sm" />
                 </Group>
@@ -66,9 +95,9 @@ const TestimonialBlock = ({ id }: { id?: string }) => {
                   </Badge>
                 </Group>
               </Card>
-            </Grid.Col>
+            </Carousel.Slide>
           ))}
-        </Grid>
+        </Carousel>
       </Container>
     </Paper>
   );

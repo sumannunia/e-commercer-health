@@ -8,6 +8,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import Endorsement from "./components/Endorsement";
+import AboutUs from "../../components/common/About";
 
 const Home = () => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -70,6 +71,7 @@ const Home = () => {
     <>
       {/* <SingleBanner /> */}
       <BannerCarousel />
+      <AboutUs />
       <ServiceCards id={sections[0]} />
       {/* <InfoCards /> */}
       <ProductCarousel id={sections[1]} />

@@ -28,8 +28,8 @@ import { fetchCart } from "../../../redux/slices/cartSlice";
 
 import { MdLogout } from "react-icons/md";
 import { CiLogin } from "react-icons/ci";
-import logo from "../../../assets/logos/logo_text.png";
-import logo2 from "../../../assets/logos/logo.png";
+import logoText from "../../../assets/logos/logo_text.png";
+import logoIcon from "../../../assets/logos/logo_icon.png";
 import { useDisclosure } from "@mantine/hooks";
 import SecondaryNav from "./SecondaryNav";
 const ellipsisData = [
@@ -69,7 +69,7 @@ const Header = () => {
           {/* Centered Logo Section */}
           <Logo />
           <Group>
-            <Image src={logo2} width={"90px"} className={styles.logoCenter} />
+            {/* <Image src={logo2} width={"90px"} className={styles.logoCenter} /> */}
           </Group>
 
           {/* Icons Section (Aligned to the Right) */}
@@ -102,14 +102,20 @@ const Header = () => {
 const Logo = () => {
   return (
     <div className={styles.logo}>
-      <Link to={"/"}>
+      <Link to={"/"} className={styles.logoLink}>
         <Image
-          src={logo}
-          // src="https://www.cureveda.com/cdn/shop/files/logo_fea5eacc-99d3-464f-b814-8af6b2aac4a8.png?v=1705557999&width=250"
-          alt="Cureveda Logo"
-          width={230}
-          height={80}
+          src={logoIcon}
+          alt="Gutexpert Logo"
+          // width={230}
+          // height={80}
           className={styles.logoMain}
+        />
+        <Image
+          src={logoText}
+          alt="Gutexpert Logo"
+          // width={230}
+          // height={80}
+          className={styles.logoMainText}
         />
       </Link>
     </div>

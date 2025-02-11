@@ -1,6 +1,10 @@
 .carouselContainer {
   cursor: pointer;
 }
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 .bannerImage {
   width: 100%;
@@ -13,6 +17,12 @@
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
+.description {
+  font-weight: 500 !important;
+}
+.button {
+  min-width: 158px !important;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .bannerImage {

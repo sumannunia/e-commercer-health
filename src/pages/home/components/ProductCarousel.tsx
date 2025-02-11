@@ -1,4 +1,4 @@
-import { Carousel } from "@mantine/carousel";
+// import { Carousel } from "@mantine/carousel";
 import {
   Tabs,
   Badge,
@@ -10,11 +10,12 @@ import {
   Container,
   Title,
   Rating,
+  Grid,
 } from "@mantine/core";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+// import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import styles from "./ProductCarousel.module.css"; // Custom CSS module
-import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+// import Autoplay from "embla-carousel-autoplay";
+// import { useRef } from "react";
 import { categories } from "../../../constants/constants";
 import { Link } from "react-router-dom";
 // Sample data for products
@@ -127,36 +128,44 @@ const products = [
 ];
 
 const ProductCarousel = ({ id }: { id?: string }) => {
-  const autoplay = useRef<any>(Autoplay({ delay: 2000 }));
+  // const autoplay = useRef<any>(Autoplay({ delay: 2000 }));
   return (
-    <Container className={styles.carouselContainer} size={"lg"} id={id}>
+    <>
       {/* Pills (Categories) */}
-      <Tabs
-        variant="pills"
-        color="orange"
-        defaultValue="Bestsellers"
-        className={styles.pills}
-      >
-        <Tabs.List className={styles.tabsList}>
-          {categories.map((category) => (
-            <Tabs.Tab value={category.label} key={category.label}>
-              <a
-                className={styles.tabNames}
-                href={`/products/${category.link}`}
-                target="_blank"
-                rel="noopener noreferrer"
+      <Container size={"lg"} pb={"70px"}>
+        <Tabs
+          variant="pills"
+          color="black"
+          defaultValue="Bestsellers"
+          className={styles.pills}
+        >
+          <Tabs.List className={styles.tabsList}>
+            {categories.map((category) => (
+              <Tabs.Tab
+                value={category.label}
+                key={category.label}
+                // onClick={() => handleCLickOntab(category.link)}
+                p={0}
               >
-                {category.label}
-              </a>
-            </Tabs.Tab>
-          ))}
-        </Tabs.List>
-      </Tabs>
-
-      <Title className={styles.titleBestSeller}>Out Best Sellers</Title>
-      {/* Product Carousel */}
-      <Container size={"lg"}>
-        <Carousel
+                <a
+                  className={styles.tabNames}
+                  href={`/products/${category.link}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {category.label}
+                </a>
+              </Tabs.Tab>
+            ))}
+          </Tabs.List>
+        </Tabs>
+      </Container>
+      <section className={styles.sectionWrapper}>
+        <Container className={styles.carouselContainer} size={"lg"} id={id}>
+          <Title className={styles.titleBestSeller}>Our Products</Title>
+          {/* Product Carousel */}
+          <Container size={"lg"}>
+            {/* <Carousel
           loop
           slideSize="25%"
           slideGap="md"
@@ -176,7 +185,7 @@ const ProductCarousel = ({ id }: { id?: string }) => {
                 withBorder
                 className={styles.card}
               >
-                {/* Discount Badge */}
+                
                 {product.discount && (
                   <Badge
                     color="teal"
@@ -187,7 +196,7 @@ const ProductCarousel = ({ id }: { id?: string }) => {
                   </Badge>
                 )}
 
-                {/* Product Image */}
+                
 
                 <Card.Section>
                   <Link to={`products/${product.id}/${product.link}`}>
@@ -200,7 +209,7 @@ const ProductCarousel = ({ id }: { id?: string }) => {
                   </Link>
                 </Card.Section>
 
-                {/* Product Details */}
+                
                 <Text size="lg" mt="md" className={styles.productName}>
                   {product.name}
                 </Text>
@@ -210,7 +219,7 @@ const ProductCarousel = ({ id }: { id?: string }) => {
                   <Text size="sm">({product.reviews} reviews)</Text>
                 </Group>
 
-                {/* Pricing */}
+                
                 <Group justify="space-between" mt="md">
                   <Text size="xl" style={{ fontWeight: 700, color: "#FFA500" }}>
                     ₹{product.price}
@@ -220,16 +229,89 @@ const ProductCarousel = ({ id }: { id?: string }) => {
                   </Text>
                 </Group>
 
-                {/* Add to Cart Button */}
-                <Button fullWidth color="orange" radius="md" mt="md">
+                
+                <Button fullWidth mt="md">
                   ADD TO CART
                 </Button>
               </Card>
             </Carousel.Slide>
           ))}
-        </Carousel>
-      </Container>
-    </Container>
+        </Carousel> */}
+            <Grid>
+              {products.map((product) => (
+                <Grid.Col span={{ md: 4, lg: 3, sm: 12 }}>
+                  <Card
+                    shadow="sm"
+                    padding="sm"
+                    pt={0}
+                    radius="md"
+                    withBorder
+                    className={styles.card}
+                  >
+                    {/* Discount Badge */}
+                    {product.discount && (
+                      <Badge
+                        color="teal"
+                        variant="filled"
+                        className={styles.discountBadge}
+                      >
+                        {product.discount}
+                      </Badge>
+                    )}
+
+                    {/* Product Image */}
+
+                    <Card.Section>
+                      <Link to={`products/${product.id}/${product.link}`}>
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          height={160}
+                          fit="cover"
+                        />
+                      </Link>
+                    </Card.Section>
+
+                    {/* Product Details */}
+                    <Text size="lg" mt="md" className={styles.productName}>
+                      {product.name}
+                    </Text>
+                    <Text size="sm">{product.description}</Text>
+                    <Group align="center" mt="sm" gap="xs">
+                      <Rating value={product.rating} readOnly />
+                      <Text size="sm">({product.reviews} reviews)</Text>
+                    </Group>
+
+                    {/* Pricing */}
+                    <Group justify="space-between" mt="md">
+                      <Text
+                        size="xl"
+                        style={{ fontWeight: 700, color: "#FFA500" }}
+                      >
+                        ₹{product.price}
+                      </Text>
+                      <Text
+                        size="sm"
+                        style={{ textDecoration: "line-through" }}
+                      >
+                        ₹{product.oldPrice}
+                      </Text>
+                    </Group>
+
+                    {/* Add to Cart Button */}
+                    <Button fullWidth mt="md" mb={"sm"}>
+                      ADD TO CART
+                    </Button>
+                  </Card>
+                </Grid.Col>
+                // <Carousel.Slide key={product.id}>
+                // </Carousel.Slide>
+              ))}
+            </Grid>
+          </Container>
+        </Container>
+      </section>
+    </>
   );
 };
 

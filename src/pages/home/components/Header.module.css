@@ -41,9 +41,18 @@
   font-size: 13px !important;
   font-weight: 400;
 }
+.logoLink {
+  display: flex;
+  align-items: center;
+  column-gap: 22px;
+}
 .logoMain {
-  width: 271px;
-  height: 48px;
+  width: 47px !important;
+  height: 38px !important;
+}
+.logoMainText {
+  width: 117px !important;
+  height: 22px;
 }
 @media screen and (max-width: 767px) {
   .icons {

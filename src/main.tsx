@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createTheme, MantineProvider } from "@mantine/core";
+import { Button, createTheme, MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import App from "./App.tsx";
 
@@ -28,7 +28,26 @@ const theme = createTheme({
       "#a06800",
     ],
   },
-  primaryColor: "orange",
+  fontFamily: `"Gotham", sans-seri`,
+
+  // primaryColor: "black",
+  headings: {
+    fontFamily: `"Gotham", sans-seri`,
+    fontWeight: "700",
+  },
+  components: {
+    Button: Button.extend({
+      defaultProps: {
+        color: "black",
+        variant: "filled",
+        radius: 11,
+        h: 50,
+        style: {
+          boxShadow: "8px 8px 0px 0px #E73C56",
+        },
+      },
+    }),
+  },
   /** Put your mantine theme override here */
 });
 createRoot(document.getElementById("root")!).render(
