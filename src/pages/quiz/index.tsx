@@ -221,9 +221,6 @@ const Quiz = () => {
             <List.Item>Free diet plan.</List.Item>
             <List.Item>Free calorie counter.</List.Item>
             <List.Item>Free step / physical activity counter.</List.Item>
-            <List.Item>
-              Run tests to make sure your changes do not break the build.
-            </List.Item>
             <List.Item>Free gut friendly recipies.</List.Item>
             <List.Item>Free yoga exercises content.</List.Item>
           </List>

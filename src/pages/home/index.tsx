@@ -1,6 +1,5 @@
 import BannerCarousel from "./components/BannerCarousel";
 import ProductCarousel from "./components/ProductCarousel";
-// import SingleBanner from "./components/SingleBanner";
 import ServiceCards from "./components/ServiceCards";
 import TestimonialBlock from "./components/Testimonials";
 import { Button, Group, Modal, Title } from "@mantine/core";
@@ -12,14 +11,16 @@ import AboutUs from "../../components/common/About";
 
 const Home = () => {
   const [opened, { open, close }] = useDisclosure(false);
-  const [currentSection, setCurrentSection] = useState(0); // Track the current section
-  const [isCursorMoving, setIsCursorMoving] = useState(false); // Track mouse movement
-  const idleTimer = useRef<NodeJS.Timeout | null>(null); // Timer reference
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isUserActive, setIsUserActive] = useState(false); // Track user activity
+  const idleTimer = useRef<NodeJS.Timeout | null>(null);
+  const scrollTimer = useRef<NodeJS.Timeout | null>(null);
+
   const sections = [
     "serviceSection",
     "productCarouselSection",
     "testimonialSection",
-  ]; // List of section IDs
+  ];
 
   // Function to scroll to a specific section
   const scrollToSection = (index: number) => {
@@ -27,39 +28,51 @@ const Home = () => {
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: "smooth" });
     }
-    setCurrentSection(index); // Update the current section
+    setCurrentSection(index);
   };
 
   // Handle idle logic
   const handleIdle = () => {
-    if (!isCursorMoving) {
-      const nextSection = (currentSection + 1) % sections.length; // Move to the next section
+    if (!isUserActive) {
+      const nextSection = (currentSection + 1) % sections.length;
       scrollToSection(nextSection);
     }
   };
-  // Handle mouse movement
-  const handleMouseMove = () => {
-    if (idleTimer.current && !opened) clearTimeout(idleTimer.current); // Clear the timer
-    setIsCursorMoving(true); // Mouse is moving
+
+  // Reset idle timer & mark user as active
+  const resetUserActivity = () => {
+    setIsUserActive(true); // User is active
+    if (idleTimer.current) clearTimeout(idleTimer.current);
+    if (scrollTimer.current) clearTimeout(scrollTimer.current);
+
     idleTimer.current = setTimeout(() => {
-      setIsCursorMoving(false); // Mouse is idle after 5 seconds
-    }, 5000); // 5-second delay
+      setIsUserActive(false); // Mark as idle after 10 sec
+      scrollTimer.current = setTimeout(handleIdle, 10000);
+    }, 10000);
   };
 
   useEffect(() => {
-    // Add event listener for mouse movement
+    // Stop auto-scroll when user interacts
     if (!opened) {
-      window.addEventListener("mousemove", handleMouseMove);
-      // Auto-scroll logic
-      if (!isCursorMoving) {
-        idleTimer.current = setTimeout(handleIdle, 5000);
+      window.addEventListener("mousemove", resetUserActivity);
+      window.addEventListener("scroll", resetUserActivity);
+      window.addEventListener("keydown", resetUserActivity);
+      window.addEventListener("click", resetUserActivity);
+
+      if (!isUserActive) {
+        scrollTimer.current = setTimeout(handleIdle, 10000);
       }
     }
+
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousemove", resetUserActivity);
+      window.removeEventListener("scroll", resetUserActivity);
+      window.removeEventListener("keydown", resetUserActivity);
+      window.removeEventListener("click", resetUserActivity);
       if (idleTimer.current) clearTimeout(idleTimer.current);
+      if (scrollTimer.current) clearTimeout(scrollTimer.current);
     };
-  }, [isCursorMoving, currentSection, opened]);
+  }, [isUserActive, currentSection, opened]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -67,19 +80,22 @@ const Home = () => {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
   return (
     <>
-      {/* <SingleBanner /> */}
       <BannerCarousel />
       <AboutUs />
       <ServiceCards id={sections[0]} />
-      {/* <InfoCards /> */}
       <ProductCarousel id={sections[1]} />
       <TestimonialBlock id={sections[2]} />
       <Endorsement />
+
       <Modal
         opened={opened}
-        onClose={close}
+        onClose={() => {
+          close();
+          setIsUserActive(false); // Reset user activity when modal closes
+        }}
         title=""
         centered
         size="md"
@@ -88,7 +104,7 @@ const Home = () => {
       >
         <Group justify="center" gap="lg">
           <Title size={"lg"} style={{ textAlign: "center" }}>
-            Get you free Gut Score and claim you free diet plan
+            Get your free Gut Score and claim your free diet plan
           </Title>
         </Group>
         <Link

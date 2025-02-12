@@ -22,36 +22,42 @@ const data = [
   {
     title: "Pre / Pro Biotic",
     image: probiotic,
+    link: "products/pre-pro-biotic",
     description:
       "Fuel Your Gut with Prebiotics, Power It with Probiotics Probiotics for Balance, Prebiotics for Strength",
   },
   {
     title: "Diet & Recipies",
     image: diet,
+    link: "recipes/healthy",
     description:
       "Cooking for Gut Health Made Simple and Delicious Choose normal ways to support your health and avoid chemicals",
   },
   {
     title: "Gut Testing",
     image: diagnostic,
+    link: "products/gut-testing",
     description:
       "A gut health test helps identify the types of microbes in your gut, including good and bad bacteria",
   },
   {
     title: "Calorie counter",
     image: calorie,
+    link: "/qr-app",
     description:
       "Antibiotics can disrupt gut health. Support your gut with balanced nutrition.",
   },
   {
     title: "Vedic Medicine",
     image: vedic,
+    link: "products/all",
     description:
       "RESTORE BALANCE NATURALLY WITH VEDIC MEDICINE VEDIC CARE FOR HAPPIER HEALTHIER GUT",
   },
   {
     title: "Yoga Wellness",
     image: yoga,
+    link: "/fitness/yoga",
     description:
       "Breathe, Stretch, Heal – GUT health starts with you Strengthen your Core Nourish your Gut",
   },
@@ -68,18 +74,18 @@ const ServiceCards = ({ id }: { id?: string }) => {
   return (
     <Container size="lg" id={id} py={"100"}>
       <Title className={styles.title}>Our Categories</Title>
-      <Text maw={961} ta={"center"} mx={"auto"} mb={70}>
+      {/* <Text maw={961} ta={"center"} mx={"auto"} mb={70}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit,
         voluptates quis nostrum consequatur nisi cupiditate deleniti aliquam
         ipsa dolorem animi eaque magni harum exercitationem, odit praesentium
         inventore cumque voluptas quasi?
-      </Text>
+      </Text> */}
 
       <Grid gutter="md" justify="center" mt={10}>
         {data.map((item, index) => (
           <Grid.Col span={{ md: 4, lg: 3, sm: 12 }} key={index}>
             <Link
-              to="/qr-app"
+              to={item.link}
               style={{
                 textDecoration: "none",
                 height: "100%",

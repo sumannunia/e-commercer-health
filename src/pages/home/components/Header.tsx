@@ -128,9 +128,7 @@ const RightSection = () => {
     <Group gap="md" className={styles.icons}>
       {ellipsisData.map((elepseItem: { link: string; label: string }) => (
         <Link to={elepseItem.link} className={styles.linkItem}>
-          <Text className={styles.topLinks} fw={400}>
-            {elepseItem.label}
-          </Text>
+          <Text className={styles.topLinks}>{elepseItem.label}</Text>
         </Link>
       ))}
       <UserMenu />

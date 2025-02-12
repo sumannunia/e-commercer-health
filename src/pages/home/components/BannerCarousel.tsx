@@ -24,7 +24,7 @@ const banners = [
   {
     src: acidity,
     alt: "acidity",
-    link: "/page2",
+    link: "/quiz",
     title: "Harmony For Your Gut!",
     description:
       "Ayurveda, Science and lifestyle ancient wisdom meets modern science for gut health.",
@@ -33,7 +33,7 @@ const banners = [
   {
     src: bloating,
     alt: "bloating",
-    link: "/page3",
+    link: "/quiz",
     title: "Calorie Counter",
     description:
       "Smart calories, stronger gut counting calories with your gut in mind your gut’s best friend is calorie counting",
@@ -48,7 +48,7 @@ const banners = [
     buttonText: "Start Now",
     src: constipation,
     alt: "constipation",
-    link: "/page4",
+    link: "/quiz",
     title: "Heal Your Gut With Every Meal",
     description:
       "Cooking up gut health: One recipe at a time. Get your personalized plan today!",
