@@ -26,12 +26,18 @@ const AboutUs = () => {
           {/* Right Section - Text & Stats */}
           <Grid.Col span={{ sm: 12, md: 7 }} className={styles.content}>
             <Text className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              Poor gut health may manifest as fatigue, upset stomach, Bloating ,
+              Indigestion , Acidity , constipation , Weight Gain , skin
+              conditions, and autoimmune challenges.
+            </Text>
+            <Text className={styles.description} mt={"xs"}>
+              Solution is not simple. Solution is not just a Probiotic or an
+              Antibiotic. Solution is a mix of Diet, calorie counting, exercise,
+              natural Gut health supplements and expert advise.
+            </Text>
+            <Text className={styles.description} mt={"xs"}>
+              We will handhold you through this scientific process of Happy Gut
+              and Wellness.
             </Text>
             <Group gap="xl" mt="md">
               <div>
