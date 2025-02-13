@@ -216,7 +216,7 @@ const Quiz = () => {
           <QRCodeCustom />
         </Grid.Col>
         <Grid.Col span={{ md: 8, lg: 9, xl: 9 }}>
-          <Title size={"md"}>To Avial Free Services: </Title>
+          <Title size={"md"}>SCAN THE BARCODE TO AVAIL FREE SERVICES: </Title>
           <List>
             <List.Item>Free diet plan.</List.Item>
             <List.Item>Free calorie counter.</List.Item>

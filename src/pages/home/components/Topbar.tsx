@@ -104,7 +104,7 @@ const TopBar = () => {
             <QRCodeCustom />
           </Grid.Col>
           <Grid.Col span={{ md: 6, lg: 7, xl: 7 }}>
-            <Title size={"md"}>To Avial Free Services: </Title>
+            <Title size={"md"}>SCAN THE BARCODE TO AVAIL FREE SERVICES: </Title>
             <List>
               <List.Item>Free diet plan.</List.Item>
               <List.Item>Free calorie counter.</List.Item>

@@ -11,15 +11,23 @@
 .tabsList {
   justify-content: center !important;
   /* margin-bottom: 3rem !important; */
-  gap: 0 !important;
+  gap: 8px 1rem !important;
 }
-
+.tabRoot {
+  background-color: transparent !important;
+}
 .pills a {
   text-decoration: none;
   color: inherit;
   font-weight: 600 !important;
   padding: 10px;
   display: block;
+  background-color: rgb(231, 60, 86);
+  color: #fff;
+  border-radius: 25px;
+}
+.pills a:hover {
+  background-color: rgba(231, 60, 86, 0.793);
 }
 
 .discountBadge {

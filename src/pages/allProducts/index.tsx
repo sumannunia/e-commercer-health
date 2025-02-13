@@ -153,7 +153,7 @@ const products: Product[] = [
     id: 8,
     image:
       "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
-    name: "GUT EXPERT - FLORA PRE+PROBIOTIC",
+    name: "GUT EXPERT - Gutsy Gut PRE+PROBIOTIC",
     description: "Eye Supplement With Lutein",
     price: 649,
     oldPrice: 800,
@@ -217,7 +217,7 @@ const products: Product[] = [
     id: 12,
     image:
       "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
-    name: "Bloat Joy + Flora",
+    name: "Bloat Joy + Gutsy Gut",
     description: "Eye Supplement With Lutein",
     price: 649,
     oldPrice: 800,

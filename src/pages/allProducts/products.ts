@@ -1070,7 +1070,7 @@ const product7 = {
 const product8 = {
   name: "GUT EXPERT - Gutsy Gut PRE+PROBIOTIC ",
   description:
-    " GUT EXPERT - Gutsy Gut PRE+PROBIOTIC--- is a probiotic and Prebiotic combination with 20 Billion IU . The combination of 19 strains of Bacteria makes it one of the most effective Pre-Probiotic combination available . You GUT needs a Prebiotic and Probiotic combination and not just any one because probiotics are live beneficial organisms, and prebiotics are the food that they need to survive . ",
+    " --- is a probiotic and Prebiotic combination with 20 Billion IU . The combination of 19 strains of Bacteria makes it one of the most effective Pre-Probiotic combination available . You GUT needs a Prebiotic and Probiotic combination and not just any one because probiotics are live beneficial organisms, and prebiotics are the food that they need to survive . ",
   price: 1037,
   oldPrice: 1595,
   rating: 4.4,
@@ -1197,7 +1197,7 @@ const product8 = {
       data: [
         {
           question:
-            "Maintain and Improve the Good Bacteria in the GUT ( NORMAL MICROFLORA )",
+            "Maintain and Improve the Good Bacteria in the GUT ( NORMAL MICROGutsy Gut )",
           answer: "",
         },
         {
@@ -1224,7 +1224,7 @@ const product8 = {
   howDoWeHelp: {
     title: "---",
     info: [
-      "Maintain and Improve the Good Bacteria in the GUT ( NORMAL MICROFLORA )",
+      "Maintain and Improve the Good Bacteria in the GUT ( NORMAL MICROGutsy Gut )",
       "Probiotics are live micro organisms intended to improve good bacteria in the body  digestion",
       "Prebiotics are the food on which the good bacteria grow",
     ],
@@ -1264,7 +1264,7 @@ export const ingredients = [
     title: "Kutaj",
     description: "Herbal remedy for digestive and intestinal issues.",
     hiddenText:
-      "Kutaj is widely recognized for its ability to treat diarrhea, dysentery, and irritable bowel syndrome (IBS). It helps restore gut flora and ensures a healthy gastrointestinal tract.",
+      "Kutaj is widely recognized for its ability to treat diarrhea, dysentery, and irritable bowel syndrome (IBS). It helps restore gut Gutsy Gut and ensures a healthy gastrointestinal tract.",
   },
   {
     id: 5,
@@ -1309,5 +1309,5 @@ export const products = {
   "bloat-joy": product5,
   "shred-max": product6,
   "liver-comfy": product7,
-  "flora-pre-probiotic": product8,
+  "Gutsy Gut-pre-probiotic": product8,
 };

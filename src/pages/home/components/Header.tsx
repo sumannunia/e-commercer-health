@@ -34,16 +34,20 @@ import { useDisclosure } from "@mantine/hooks";
 import SecondaryNav from "./SecondaryNav";
 const ellipsisData = [
   {
+    label: "WEIGHT LOSS",
+    link: "/quiz",
+  },
+  {
     label: "Diagnostic Gut testing",
-    link: "/diagnostic-gut-testing",
+    link: "/quiz",
   },
   {
     label: "Liver Detox",
-    link: "/liver-detox",
+    link: "/products/7/liver-comfy",
   },
   {
     label: "Individualised Diet plan",
-    link: "/dndividualised-diet-plan",
+    link: "/quiz",
   },
 ];
 

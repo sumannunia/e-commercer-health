@@ -17,20 +17,15 @@ const menuItems: any = {
     { label: "Exercise", link: "/fitness/exercise" },
   ],
   Recipes: { link: "/recipes/healthy" },
-  // Recipes: [
-  //   { label: "Healthy Recipes", link: "/recipes/healthy" },
-  //   { label: "Quick Meals", link: "/recipes/quick-meals" },
-  // ],
-
   "Gut Health Products": [
     {
       label: "Constipation , Indigestion , Loss of Apetite ",
-      link: "/gut-health/diet-and-gut",
+      link: "/products/1/gastro-comfort",
     },
-    { label: "Loose Motion", link: "/gut-health/loose-motion" },
-    { label: "Acidic Reflux", link: "/gut-health/acidic-reflux" },
-    { label: "Sleep / Stress", link: "/gut-health/sleep-stress" },
-    { label: "Bloating", link: "/gut-health/bloating" },
+    { label: "Loose Motion", link: "/products/2/loose-control" },
+    { label: "Acidic Reflux", link: "/products/3/soothe-gut" },
+    { label: "Sleep / Stress", link: "/products/4/rest-n-calm" },
+    { label: "Bloating", link: "/products/5/bloat-joy" },
   ],
   "Pre and Pro Biotic": { link: "products/pre-pro-biotic" },
 };

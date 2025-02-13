@@ -115,7 +115,7 @@ const products = [
     id: 8,
     image:
       "https://www.cureveda.com/cdn/shop/files/Card1_fa830874-d45b-48cc-8374-b75f0f3d1909.jpg?v=1707671989&width=800",
-    name: "GUT EXPERT - FLORA PRE+PROBIOTIC",
+    name: "GUT EXPERT - Gutsy Gut PRE+PROBIOTIC",
     description: "Eye Supplement With Lutein",
     price: 549,
     oldPrice: 845,
@@ -144,6 +144,7 @@ const ProductCarousel = ({ id }: { id?: string }) => {
               <Tabs.Tab
                 value={category.label}
                 key={category.label}
+                className={styles.tabRoot}
                 // onClick={() => handleCLickOntab(category.link)}
                 p={0}
               >
