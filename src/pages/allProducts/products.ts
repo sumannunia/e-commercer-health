@@ -104,7 +104,7 @@ const product1 = {
         { question: "Do u have infrequent Bowel Movements?", answer: "" },
         { question: "Do u have difficulty passing stool?", answer: "" },
       ],
-      meta: "f the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "f the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -256,7 +256,7 @@ const product2 = {
           answer: "",
         },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start Loose Contro immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -408,7 +408,7 @@ const product3 = {
         { question: "Do you Frequent burping or hiccups?", answer: "" },
         { question: "Do you get Heartburn?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -555,7 +555,7 @@ const product4 = {
         },
         { question: "Do you have Headaches , depression?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -718,7 +718,7 @@ const product5 = {
         { question: "Belching (burping)?", answer: "" },
         { question: "Feeling full ", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -872,7 +872,7 @@ const product6 = {
         { question: "High blood pressure", answer: "" },
         { question: "Memory loss", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -1025,7 +1025,7 @@ const product7 = {
         { question: "You’re always fogg?", answer: "" },
         { question: "You have regular joint pain?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -1188,7 +1188,7 @@ const product8 = {
         { question: "Do u feel bloated?", answer: "" },
         { question: "Your skin isn’t clear?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [

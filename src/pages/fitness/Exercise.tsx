@@ -1,4 +1,8 @@
 import BlogLayout from "../../components/common/BlogLayout";
+import img1 from "../../assets/fitness/img1.png";
+import img2 from "../../assets/fitness/img2.png";
+import { Container, Divider } from "@mantine/core";
+import QRBlock from "../../components/common/QR/QRBlock";
 
 const blogData = [
   {
@@ -8,7 +12,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "1. Microbiome Diversity",
+    content: "1.Microbiome Diversity",
     level: 2, // Represents heading level (h1, h2, etc.)
   },
   {
@@ -18,7 +22,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "2. Enhanced Gut Motility",
+    content: "2.Enhanced Gut Motility",
     level: 2, // Represents heading level (h1, h2, etc.)
   },
   {
@@ -28,7 +32,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "3. Anti-Inflammatory Effects",
+    content: "3.Anti-Inflammatory Effects",
     level: 2, // Represents heading level (h1, h2, etc.)
   },
   {
@@ -38,7 +42,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "4. Stress Reduction",
+    content: "4.Stress Reduction",
     level: 2,
   },
 
@@ -49,7 +53,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "5. Increased Production of Short-Chain Fatty Acids (SCFAs)",
+    content: "5.Increased Production of Short-Chain Fatty Acids (SCFAs)",
     level: 2,
   },
   {
@@ -59,7 +63,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "6. Improved Immune Function",
+    content: "6.Improved Immune Function",
     level: 2,
   },
   {
@@ -69,7 +73,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "7. Weight Management",
+    content: "7.Weight Management",
     level: 2,
   },
   {
@@ -79,7 +83,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "8. Psychobiome Connection",
+    content: "8.Psychobiome Connection",
     level: 2,
   },
   {
@@ -89,7 +93,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "9. Dietary Considerations",
+    content: "9.Dietary Considerations",
     level: 2,
   },
   {
@@ -99,7 +103,7 @@ const blogData = [
   },
   {
     type: "title",
-    content: "10. Type and Intensity of Exercise",
+    content: "10.Type and Intensity of Exercise",
     level: 2,
   },
   {
@@ -117,10 +121,23 @@ const blogData = [
     content:
       "In summary, incorporating regular physical activity into your routine can significantly benefit gut health through a variety of mechanisms. However, it’s essential to find a balanced approach to exercise that suits individual capabilities and preferences. As with any health-related endeavor, it's wise to consult with healthcare professionals when making significant changes to exercise routines or lifestyle",
   },
+  {
+    type: "imageArr",
+    src: [img1, img2],
+    alt: "Fiber-rich foods",
+  },
 ];
 
 const Exercise = () => {
-  return <BlogLayout data={blogData} />;
+  return (
+    <>
+      <Container mt={"xl"}>
+        <QRBlock />
+        <Divider mt={"lg"} />
+      </Container>
+      <BlogLayout data={blogData} />;
+    </>
+  );
 };
 
 export default Exercise;

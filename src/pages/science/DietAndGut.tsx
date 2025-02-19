@@ -12,10 +12,12 @@ import mindful_eating from "../../assets/diet-and-gut/mindful_wating.webp";
 import personilazation from "../../assets/diet-and-gut/personilazation.webp";
 import dairy from "../../assets/diet-and-gut/dairy.webp";
 import ployphenyl from "../../assets/diet-and-gut/polyphenyl.png";
-import cooking from "../../assets/diet-and-gut/cooking.png";
+import cooking from "../../assets/diet-and-gut/broating.webp";
 import gutBenefits from "../../assets/diet-and-gut/gut_helath_benefits.png";
 import mediterian from "../../assets/diet-and-gut/mediterian.png";
 import zinc from "../../assets/diet-and-gut/zinc.png";
+import { Container, Divider } from "@mantine/core";
+import QRBlock from "../../components/common/QR/QRBlock";
 
 // import InfoCards from "../home/components/InfoCards";
 
@@ -490,6 +492,10 @@ const blogData = [
 const DietAndGut = () => {
   return (
     <>
+      <Container mt={"xl"}>
+        <QRBlock />
+        <Divider mt={"lg"} />
+      </Container>
       <BlogLayout data={blogData} />
     </>
   );

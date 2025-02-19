@@ -44,7 +44,7 @@ const menuItems: any = {
 //     link: "/dndividualised-diet-plan",
 //   },
 // ];
-const SecondaryNav: React.FC = () => {
+const SecondaryNav = ({ close }: { close: any }) => {
   return (
     <div className={styles.secondaryNav}>
       <Container size="lg">
@@ -62,7 +62,9 @@ const SecondaryNav: React.FC = () => {
                   {menuItems[label as keyof typeof menuItems]?.map(
                     (item: any) => (
                       <Link to={item.link} className={styles.menuLink}>
-                        <Menu.Item key={item.link}>{item.label}</Menu.Item>
+                        <Menu.Item key={item.link} onClick={close}>
+                          {item.label}
+                        </Menu.Item>
                       </Link>
                     )
                   )}
@@ -73,6 +75,7 @@ const SecondaryNav: React.FC = () => {
                 <Link
                   className={styles.directLinks}
                   to={`${menuItems[label as keyof typeof menuItems]?.link}`}
+                  onClick={close}
                 >
                   {label}
                 </Link>

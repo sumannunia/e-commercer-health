@@ -35,7 +35,7 @@ import SecondaryNav from "./SecondaryNav";
 const ellipsisData = [
   {
     label: "WEIGHT LOSS",
-    link: "/quiz",
+    link: "/products/6/shred-max",
   },
   {
     label: "Diagnostic Gut testing",
@@ -71,14 +71,14 @@ const Header = () => {
           {/* <Group className={styles.spacer} /> */}
 
           {/* Centered Logo Section */}
-          <Logo />
+          <Logo close={close} />
           <Group>
             {/* <Image src={logo2} width={"90px"} className={styles.logoCenter} /> */}
           </Group>
 
           {/* Icons Section (Aligned to the Right) */}
           <div className={styles.rightSectionMobile}>
-            <RightSection />
+            <RightSection close={close} />
           </div>
           <ActionIcon
             variant="default"
@@ -88,25 +88,25 @@ const Header = () => {
             <RxHamburgerMenu />
           </ActionIcon>
         </Container>
-        <Drawer opened={opened} onClose={close} title={<Logo />}>
+        <Drawer opened={opened} onClose={close} title={<Logo close={close} />}>
           {/* Drawer content */}
 
-          <RightSection />
+          <RightSection close={close} />
 
-          <SecondaryNav />
+          <SecondaryNav close={close} />
         </Drawer>
       </div>
       <div className={styles.secondaryNavDesktop}>
-        <SecondaryNav />
+        <SecondaryNav close={close} />
       </div>
     </>
   );
 };
 
-const Logo = () => {
+const Logo = ({ close }: { close: any }) => {
   return (
     <div className={styles.logo}>
-      <Link to={"/"} className={styles.logoLink}>
+      <Link to={"/"} className={styles.logoLink} onClick={close}>
         <Image
           src={logoIcon}
           alt="Gutexpert Logo"
@@ -125,13 +125,13 @@ const Logo = () => {
     </div>
   );
 };
-const RightSection = () => {
+const RightSection = ({ close }: { close: any }) => {
   const [cartItemsCount] = useState(0); // Example count state
   const navigate = useNavigate();
   return (
     <Group gap="md" className={styles.icons}>
       {ellipsisData.map((elepseItem: { link: string; label: string }) => (
-        <Link to={elepseItem.link} className={styles.linkItem}>
+        <Link to={elepseItem.link} className={styles.linkItem} onClick={close}>
           <Text className={styles.topLinks}>{elepseItem.label}</Text>
         </Link>
       ))}
@@ -139,7 +139,13 @@ const RightSection = () => {
       {/* <ActionIcon variant="transparent" size="lg">
             <IconSearch size={24} stroke={1.5} />
           </ActionIcon> */}
-      <Indicator label={cartItemsCount} size={16} color="yellow" offset={5}>
+      <Indicator
+        onClick={close}
+        label={cartItemsCount}
+        size={16}
+        color="yellow"
+        offset={5}
+      >
         <ActionIcon
           variant="transparent"
           size="lg"

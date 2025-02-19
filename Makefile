@@ -20,7 +20,9 @@ image_push:
 	scp -i interns-web.pem ${NAME}.tar.gz ubuntu@ec2-3-7-50-225.ap-south-1.compute.amazonaws.com:~/docker-images/
 
 connect: 
-	ssh -i "interns-web.pem" ubuntu@ec2-3-7-50-225.ap-south-1.compute.amazonaws.com
+	ssh  root@46.202.162.2
+# connect: 
+# 	# ssh -i "interns-web.pem" ubuntu@ec2-3-7-50-225.ap-south-1.compute.amazonaws.com
 
 tag:
 	@docker tag ui/e-commerce-health:latest sumannunia/e-commerce-health:latest
@@ -29,6 +31,8 @@ push:
 	@docker push sumannunia/e-commerce-health:latest
 
 
+# hostinger pass
+	# 8w/zq6iK;vK9a-W1#KEG
 # ensure the docker is running in the desktop
 
 # sudo docker ps

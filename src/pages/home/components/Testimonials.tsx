@@ -62,12 +62,7 @@ const TestimonialBlock = ({ id }: { id?: string }) => {
       <Container size="lg" px="md">
         <div className={styles.textContainer}>
           <Title ta={"center"}>What Our Customers Say</Title>
-          <Text size="lg" fw={500} mb="sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-            libero, ad illum itaque quibusdam labore numquam ipsa dolores
-            consequatur! Aspernatur eaque nulla necessitatibus ducimus
-            repellendus excepturi dignissimos amet laborum ullam!
-          </Text>
+          <Text size="lg" fw={500} mb="sm"></Text>
         </div>
         <Carousel
           slideSize="30%"

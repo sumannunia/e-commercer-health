@@ -4,6 +4,10 @@ import img2 from "../../assets/vedic-and-gut/image2.png";
 import img3 from "../../assets/vedic-and-gut/image3.png";
 import img4 from "../../assets/vedic-and-gut/image4.png";
 import img5 from "../../assets/vedic-and-gut/image5.png";
+import { Container, Divider } from "@mantine/core";
+import QRBlock from "../../components/common/QR/QRBlock";
+import ginger from "../../assets/vedic-and-gut/ginger.webp";
+import turmeric from "../../assets/vedic-and-gut/turmeric.webp";
 
 const blogData = [
   {
@@ -46,7 +50,11 @@ const blogData = [
     type: "paragraph",
 
     content:
-      "Dietary practices in Vedic medicine emphasize the consumption of fresh, whole foods, tailored to an individual's dosha. Herbal remedies, such as turmeric and ginger,   ( Akash add pics of these ingredients ) are also frequently used to boost digestive health and combat inflammation. Furthermore, mindfulness practices like yoga and meditation are integrated to reduce stress, which can negatively impact gut health. By nurturing the gut through Vedic principles, individuals can achieve holistic wellness, enhancing both physical vitality and mental clarity.",
+      "Dietary practices in Vedic medicine emphasize the consumption of fresh, whole foods, tailored to an individual's dosha. Herbal remedies, such as turmeric and ginger, are also frequently used to boost digestive health and combat inflammation. Furthermore, mindfulness practices like yoga and meditation are integrated to reduce stress, which can negatively impact gut health. By nurturing the gut through Vedic principles, individuals can achieve holistic wellness, enhancing both physical vitality and mental clarity.",
+  },
+  {
+    type: "imageArr",
+    src: [ginger, turmeric],
   },
   {
     type: "reference",
@@ -61,6 +69,7 @@ const blogData = [
       },
     ],
   },
+
   // {
   //   type: "reference",
   //   reference: [
@@ -75,8 +84,15 @@ const blogData = [
 ];
 
 const VedicAndGut = () => {
-  return <BlogLayout data={blogData} />;
-  // return <InfoCards />;
+  return (
+    <>
+      <Container mt={"xl"}>
+        <QRBlock />
+        <Divider mt={"lg"} />
+      </Container>
+      <BlogLayout data={blogData} />;
+    </>
+  );
 };
 
 export default VedicAndGut;

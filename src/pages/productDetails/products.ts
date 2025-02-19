@@ -104,7 +104,7 @@ const product1 = {
         { question: "Do u have infrequent Bowel Movements?", answer: "" },
         { question: "Do u have difficulty passing stool?", answer: "" },
       ],
-      meta: "f the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "f the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -256,7 +256,7 @@ const product2 = {
           answer: "",
         },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Soothe Gut immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -408,7 +408,7 @@ const product3 = {
         { question: "Do you Frequent burping or hiccups?", answer: "" },
         { question: "Do you get Heartburn?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -447,7 +447,7 @@ const product3 = {
 const product4 = {
   name: "GUT EXPERT - Rest n Calm",
   description:
-    "Rest n Calm  contains 100 Natural Ayurveda compounds that help to calm the nervous system , reduce anxiety and treat loss of sleep. It serves as a soothing ritual, after a long day. The gentle, calming effect of SLEEP GOOD can help to lower cortisol levels, the hormone associated with stress, and enhance overall well-being.The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form .",
+    "Rest n Calm  contains 100 Natural Ayurveda compounds that help to calm the nervous system , reduce anxiety and treat loss of sleep. It serves as a soothing ritual, after a long day. The gentle, calming effect of SLEEP GOOD can help to lower cortisol levels, the hormone associated with stress, and enhance overall well-being.The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form .",
   price: 1037,
   oldPrice: 1595,
   rating: 4.4,
@@ -555,7 +555,7 @@ const product4 = {
         },
         { question: "Do you have Headaches , depression?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Rest N Calm immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -718,7 +718,7 @@ const product5 = {
         { question: "Belching (burping)?", answer: "" },
         { question: "Feeling full ", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Bloat Joy immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -872,7 +872,7 @@ const product6 = {
         { question: "High blood pressure", answer: "" },
         { question: "Memory loss", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -1025,7 +1025,7 @@ const product7 = {
         { question: "You’re always fogg?", answer: "" },
         { question: "You have regular joint pain?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -1188,7 +1188,7 @@ const product8 = {
         { question: "Do u feel bloated?", answer: "" },
         { question: "Your skin isn’t clear?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastrom Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
     },
   ],
   questions2: [

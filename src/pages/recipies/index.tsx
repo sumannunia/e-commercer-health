@@ -1,6 +1,8 @@
 import BlogLayout from "../../components/common/BlogLayout";
 import impOfDiet from "../../assets/fitness/imp_of_diet.png";
 import vegetables from "../../assets/fitness/vegetables.png";
+import QRBlock from "../../components/common/QR/QRBlock";
+import { Container, Divider, Group, Select } from "@mantine/core";
 
 const blogData = [
   {
@@ -232,7 +234,7 @@ const blogData = [
     type: "list",
     items: [
       "Choose whole grains like brown rice, oats, quinoa, and whole wheat flour over refined grains (white rice, white bread).",
-      "ncorporate millets such as ragi, jowar, bajra, and foxtail millet for their high fiber, iron, and calcium content.",
+      "Incorporate millets such as ragi, jowar, bajra, and foxtail millet for their high fiber, iron, and calcium content.",
       "Opt for unpolished grains for better nutrient retention",
       "Vegetable Millet Khichdi: Combine millets, lentils, and mixed vegetables; cook with minimal oil and spices for a one-pot meal rich in protein and fiber",
       "Whole Grain Breakfast Bowl: Mix cooked quinoa with yogurt, nuts, and fresh fruits for a quick and wholesome start to the day",
@@ -439,9 +441,94 @@ const blogData = [
       "A holistic approach to nutrition fosters physical and mental well-being, improving quality of life at every stage.",
   },
 ];
+const regions = [
+  { value: "north_veg_main_course", label: "North Veg Main Course" },
+  { value: "north_non_veg_main_course", label: "North Non Veg Main Course" },
+  { value: "south_veg_main_course", label: "South Veg Main Course" },
+  { value: "south_non_veg_main_course", label: "South Non Veg Main Course" },
+  { value: "west_veg_main_course", label: "West Veg Main Course" },
+  { value: "west_non_veg_main_course", label: "West Non Veg Main Course" },
+  { value: "east_veg_main_course", label: "East Veg Main Course" },
+  { value: "east_non_veg_main_course", label: "East Non Veg Main Course" },
+  { value: "north_breads_rice", label: "North Breads and Rice" },
+  { value: "north_snacks", label: "North Snacks" },
+  { value: "north_beverages", label: "North Beverages" },
+  { value: "north_desserts", label: "North Desserts" },
+  { value: "north_side_dishes", label: "North Side Dishes" },
+  { value: "south_breads_rice", label: "South Breads and Rice" },
+  { value: "south_snacks", label: "South Snacks" },
+  { value: "south_beverages", label: "South Beverages" },
+  { value: "south_desserts", label: "South Desserts" },
+  { value: "south_side_dishes", label: "South Side Dishes" },
+  { value: "west_breads_rice", label: "West Breads and Rice" },
+  { value: "west_snacks", label: "West Snacks" },
+  { value: "west_beverages", label: "West Beverages" },
+  { value: "west_desserts", label: "West Desserts" },
+  { value: "west_side_dishes", label: "West Side Dishes" },
+  { value: "east_breads_rice", label: "East Breads and Rice" },
+  { value: "east_snacks", label: "East Snacks" },
+  { value: "east_beverages", label: "East Beverages" },
+  { value: "east_desserts", label: "East Desserts" },
+  { value: "east_side_dishes", label: "East Side Dishes" },
+  { value: "jain_main_course", label: "Jain Main Course" },
+  { value: "jain_breads_rice", label: "Jain Breads and Rice" },
+  { value: "jain_snacks", label: "Jain Snacks" },
+  { value: "jain_beverages", label: "Jain Beverages" },
+  { value: "jain_desserts", label: "Jain Desserts" },
+  { value: "jain_side_dishes", label: "Jain Side Dishes" },
+  { value: "tiffin_veg_recipes", label: "Tiffin Veg Recipes" },
+  { value: "tiffin_non_veg_recipes", label: "Tiffin Non Veg Recipes" },
+  { value: "fermented_foods", label: "Fermented Foods" },
+  { value: "travellers_recipes", label: "Travellers Recipes" },
+  {
+    value: "specialized_diets_dash_diet",
+    label: "Specialized Diets DASH Diet",
+  },
+];
+const categories = [
+  { value: "north", label: "North" },
+  { value: "south", label: "South" },
+  { value: "west", label: "West" },
+  { value: "east", label: "East" },
+  { value: "jain", label: "Jain" },
+  { value: "dash_diet", label: "DASH Diet" },
+  { value: "tiffin_recipes", label: "Tiffin Recipes" },
+  { value: "fermented_food", label: "Fermented Food" },
+  { value: "traveller_diet", label: "Traveller Diet" },
+  { value: "mediterranean_diet", label: "Mediterranean Diet" },
+  { value: "nordic_diet", label: "Nordic Diet" },
+  { value: "whole_360_diet", label: "Whole 360 Diet" },
+  { value: "japanese_diet", label: "Japanese Diet" },
+  { value: "flexitarian_diet", label: "Flexitarian Diet" },
+  { value: "vegan_diet", label: "Vegan Diet" },
+];
 const Recipies = () => {
   return (
     <>
+      <Container mt={"xl"}>
+        <QRBlock />
+        <Divider mt={"lg"} />
+      </Container>
+      <Container>
+        <Group my={"md"}>
+          <Select
+            defaultValue={"north"}
+            data={categories}
+            label={"Select Category"}
+            searchable
+            nothingFoundMessage="Not found"
+            checkIconPosition="right"
+          />
+          <Select
+            defaultValue={"north_veg_main_course"}
+            checkIconPosition="right"
+            data={regions}
+            label={"Select region"}
+            searchable
+            nothingFoundMessage="Not found"
+          />
+        </Group>
+      </Container>
       <BlogLayout data={blogData} />
     </>
   );

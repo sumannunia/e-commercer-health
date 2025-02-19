@@ -3,6 +3,8 @@ import img1 from "../../assets/clinical/image1.png";
 import img2 from "../../assets/clinical/image2.png";
 import img3 from "../../assets/clinical/image3.png";
 import img4 from "../../assets/clinical/image4.png";
+import { Container, Divider } from "@mantine/core";
+import QRBlock from "../../components/common/QR/QRBlock";
 
 const blogData = [
   {
@@ -220,10 +222,10 @@ const blogData = [
   {
     type: "list",
     items: [
-      "Diet Modification: Identifying and avoiding trigger foods.",
-      "Probiotics and Prebiotics: Supporting gut health with beneficial bacteria and dietary fibers.",
-      "Medications: Anti-inflammatory drugs, antidiarrheals, or probiotics, depending on the condition.",
-      "Lifestyle Changes: Stress management techniques, exercise, and adequate hydration.",
+      "Diet Modification: Identifying and avoiding trigger foods.",
+      "Probiotics and Prebiotics: Supporting gut health with beneficial bacteria and dietary fibers.",
+      "Medications: Anti-inflammatory drugs, antidiarrheals, or probiotics, depending on the condition.",
+      "Lifestyle Changes: Stress management techniques, exercise, and adequate hydration.",
     ],
   },
   {
@@ -243,7 +245,16 @@ const blogData = [
 ];
 
 const ClinicalGutTest = () => {
-  return <BlogLayout data={blogData} />;
+  return (
+    <>
+      <Container mt={"xl"}>
+        <QRBlock />
+        <Divider mt={"lg"} />
+      </Container>
+      <BlogLayout data={blogData} />;
+    </>
+  );
+
   // return <InfoCards />;
 };
 
