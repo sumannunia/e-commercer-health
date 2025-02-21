@@ -3,7 +3,13 @@ import { Card, Group, Badge, Text, Button, Container } from "@mantine/core";
 import styles from "./SelectablePlans.module.css";
 import ComboCart from "../ComboCart";
 
-const SelectablePlans = ({ data }: { data: any[] }) => {
+const SelectablePlans = ({
+  data,
+  combos = [],
+}: {
+  data: any[];
+  combos: any[];
+}) => {
   const [selectedPlan, setSelectedPlan] = useState<null | string | number>(1);
 
   const handleSelect = (planId: string | number) => {
@@ -64,8 +70,8 @@ const SelectablePlans = ({ data }: { data: any[] }) => {
             )}
           </Card>
         ))}
-        <ComboCart />
       </Group>
+      <ComboCart data={combos} selectedPlan={selectedPlan} />
     </Container>
   );
 };

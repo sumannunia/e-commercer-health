@@ -12,42 +12,33 @@ import {
 } from "@mantine/core";
 import styles from "./ComboCart.module.css";
 
-const ComboCart = () => {
-  const [selectedItems, setSelectedItems] = useState([true, true]);
-  const products = [
-    {
-      id: 1,
-      image:
-        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
-      name: "Vinod ICY Stainless Steel Water Bottle - 1000 ml",
-      price: 360,
-    },
-    {
-      id: 2,
-      image:
-        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
-      name: "Vinod Sandwich Bottom Stainless Steel Pressure Cooker Combo",
-      price: 3149,
-    },
-  ];
-
+const ComboCart = ({
+  data,
+  selectedPlan,
+}: {
+  data: any[];
+  selectedPlan: number | null | string;
+}) => {
+  const [selectedItems, setSelectedItems] = useState([true, true, false]);
+  console.log({ selectedPlan });
   const toggleSelection = (index: number) => {
     const newSelection = [...selectedItems];
     newSelection[index] = !newSelection[index];
     setSelectedItems(newSelection);
   };
 
-  const totalPrice = products.reduce(
+  const totalPrice = data.reduce(
     (sum, product, index) => sum + (selectedItems[index] ? product.price : 0),
     0
   );
+  console.log({ data });
 
   return (
-    <Container size="md" px={0} className={styles.comboCart}>
+    <Container size="md" px={0} className={styles.comboCart} mt={"md"}>
       <Card withBorder radius="md" p="0">
         <Grid gutter="xs">
-          {products.map((product, index) => (
-            <Grid.Col span={6} key={product.id} className={styles.productBlock}>
+          {data.map((product, index) => (
+            <Grid.Col span={4} key={product.id} className={styles.productBlock}>
               <Card radius="md" className={styles.productCard}>
                 <Checkbox
                   checked={selectedItems[index]}
@@ -63,8 +54,25 @@ const ComboCart = () => {
                 <Text size="sm" className={styles.productName}>
                   {product.name}
                 </Text>
-                <Text size="sm" color="dimmed">
-                  ₹{product.price.toLocaleString()}
+                <Text size="sm" className={styles.pricing}>
+                  <span className={styles.originalPrice}>
+                    ₹
+                    {product.priceOnSelection[
+                      selectedPlan as keyof typeof product.priceOnSelection
+                    ]?.original?.toLocaleString()}
+                  </span>
+                  <span className={styles.sellingPrice}>
+                    ₹
+                    {product.priceOnSelection[
+                      selectedPlan as keyof typeof product.priceOnSelection
+                    ]?.offer?.toLocaleString()}
+                  </span>
+                  <span className={styles.discount}>
+                    Save ₹
+                    {product.priceOnSelection[
+                      selectedPlan as keyof typeof product.priceOnSelection
+                    ]?.saving?.toLocaleString()}
+                  </span>
                 </Text>
               </Card>
               {index === 0 && <Text className={styles.plusSign}>+</Text>}

@@ -15,6 +15,7 @@ import {
   ThemeIcon,
   ListItem,
   Rating,
+  SimpleGrid,
 } from "@mantine/core";
 
 import { IconCheck } from "@tabler/icons-react";
@@ -22,12 +23,15 @@ import styles from "./ProductDetailsPage.module.css"; // Add styles as necessary
 import { useAppDispatch } from "../../redux/store";
 import { addItemToCart } from "../../redux/slices/cartSlice";
 import SelectablePlans from "./SaveDiscountBlock";
-import quality from "../../assets/images/quality.png";
 import CertificationBlock from "./CertificationBlock";
 import CustomerReviews from "./CustomerReview/CustomerReviews";
 import { ingredients, products } from "./products";
 import { useParams } from "react-router-dom";
 import ErrorBoundary from "../../utils/ErrorBoundary";
+import quality1 from "../../assets/images/quality/image.png";
+import quality2 from "../../assets/images/quality/certified.png";
+import quality3 from "../../assets/images/quality/pure.png";
+import quality4 from "../../assets/images/quality/tested.png";
 
 const ProductDetailsPage = () => {
   const { productName } = useParams();
@@ -51,9 +55,12 @@ const ProductDetailsPage = () => {
     <ErrorBoundary>
       <Image
         src={
-          "https://thegoodbug.com/cdn/shop/files/Top_banner_1.jpg?v=1715679883"
+          product?.bannerImage
+            ? product?.bannerImage
+            : "https://thegoodbug.com/cdn/shop/files/Top_banner_1.jpg?v=1715679883"
         }
         fit="cover"
+        style={{ height: "470px", objectPosition: "center" }}
       />
       <Container fluid px="md" mt={"lg"}>
         <Grid gutter="lg">
@@ -119,7 +126,7 @@ const ProductDetailsPage = () => {
                 {product.discountBanner}
               </Text>
             </Paper> */}
-            <Title size={"md"} mt={"sm"} mb={"xs"}>
+            <Title size={"lg"} mt={"sm"} mb={"xs"} tt={"uppercase"}>
               Indication
             </Title>
             <Group mt="sm" gap="sm">
@@ -141,7 +148,7 @@ const ProductDetailsPage = () => {
               {product.description}
             </Text>
             <Title size={"md"} mt={"sm"} mb={"xs"}>
-              Principle Ingredients
+              Principal Ingredients and Benefits
             </Title>
             <Text color="dimmed" size="sm">
               {product.principalIngredients}
@@ -208,7 +215,7 @@ const ProductDetailsPage = () => {
               ))}
             </Group> */}
             <Divider my={"lg"} />
-            <SelectablePlans data={product?.saver} />
+            <SelectablePlans combos={product?.combos} data={product?.saver} />
             <Button
               variant="gradient"
               radius={"25"}
@@ -249,7 +256,7 @@ const ProductDetailsPage = () => {
           </Grid.Col>
         </Grid>
         <Title my={"lg"} className={styles.ingridentsTitle}>
-          Ingridients
+          Pure Vedic Ingredients - No Chemicals
         </Title>
         <Grid>
           {ingredients.map((ingredient) => (
@@ -278,7 +285,7 @@ const ProductDetailsPage = () => {
         <Paper className={styles.questionair}>
           <Grid p={0} m={0}>
             <Grid.Col span={{ sm: 12, md: 6, lg: 6 }}>
-              <Text size="lg" fw={500}>
+              <Text size="lg" fw={700}>
                 {product.questions[0].title}
               </Text>
               <List className={styles.list}>
@@ -293,7 +300,7 @@ const ProductDetailsPage = () => {
               </Text>
             </Grid.Col>
             <Grid.Col span={{ sm: 12, md: 6, lg: 6 }} pl={"xl"}>
-              <Text size="lg" fw={500}>
+              <Text size="lg" fw={700}>
                 {product.questions2[0].title}
               </Text>
               <List className={styles.list}>
@@ -311,7 +318,31 @@ const ProductDetailsPage = () => {
             <Title mb={"sm"} className={styles.ingridentsTitle}>
               Quality Assurance
             </Title>
-            <Image src={quality} fit="contain" w={"100%"} h={"600"} />
+            <SimpleGrid cols={4} spacing={"md"} verticalSpacing={"md"}>
+              <div className={styles.gridColQuality}>
+                <Image src={quality1} className={styles.qualityImage} />
+                <Text className={styles.qualityText}>
+                  10 times more powerful extract formulation used
+                </Text>
+              </div>
+              <div className={styles.gridColQuality}>
+                <Image src={quality2} className={styles.qualityImage} />
+                <Text className={styles.qualityText}>
+                  All extracts tested for heavy metals
+                </Text>
+              </div>
+              <div className={styles.gridColQuality}>
+                <Image src={quality3} className={styles.qualityImage} />
+                <Text className={styles.qualityText}>100% Pure </Text>
+              </div>
+              <div className={styles.gridColQuality}>
+                <Image src={quality4} className={styles.qualityImage} />
+                <Text className={styles.qualityText}>
+                  Finished good tested before release
+                </Text>
+              </div>
+            </SimpleGrid>
+            {/* <Image src={quality} fit="contain" w={"100%"} h={"600"} /> */}
           </Paper>
         </Container>
         <CustomerReviews />

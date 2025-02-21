@@ -6,7 +6,17 @@ import sonth from "../../assets/images/ingredients/sonth.webp";
 import jeera from "../../assets/images/ingredients/jeera.webp";
 import dhania from "../../assets/images/ingredients/dhania.webp";
 import pusp from "../../assets/images/ingredients/dhatki_pusp.webp";
-
+import triphala from "../../assets/images/ingredients/triphala.webp";
+import trikatu from "../../assets/images/ingredients/trikatu.webp";
+import shilajit from "../../assets/images/ingredients/shilajit.webp";
+import kutaki from "../../assets/images/ingredients/kutaki.webp";
+import rohini from "../../assets/images/ingredients/rohini.webp";
+import patol from "../../assets/images/ingredients/parwal.webp";
+import ajmoda from "../../assets/images/ingredients/ajmoda.webp";
+import padma from "../../assets/images/ingredients/padma.webp";
+import cumin from "../../assets/images/ingredients/cumin_jeera.webp";
+// banners
+import constipationBanner from "../../assets/images/indigestion_banner.webp";
 const product1 = {
   name: "GUT EXPERT - Gastro Comfort",
   description:
@@ -26,7 +36,7 @@ const product1 = {
     "ISO 22000",
     "WHO - GMP certificate",
   ],
-
+  bannerImage: constipationBanner,
   sizes: [
     { name: "Starter Pack", weight: "500 gm", price: 1037 },
     { name: "Results Pack", weight: "1 kg", price: 1279 },
@@ -77,20 +87,20 @@ const product1 = {
   saver: [
     {
       id: 1,
-      duration: "3 Month",
+      duration: "1 Month",
       sticks: "",
-      price: "₹2,699",
-      oldPrice: "₹4,194",
-      save: "₹1,495",
+      price: "₹956",
+      oldPrice: "₹1,275",
+      save: "₹319",
       badge: "BEST RESULT",
     },
     {
       id: 2,
       duration: "2 Month",
       sticks: "",
-      price: "₹1,849",
-      oldPrice: "₹2,796",
-      save: "₹947",
+      price: "₹1,785",
+      oldPrice: "₹2,550",
+      save: "₹1,011",
       badge: "MOST POPULAR",
     },
   ],
@@ -104,7 +114,7 @@ const product1 = {
         { question: "Do u have infrequent Bowel Movements?", answer: "" },
         { question: "Do u have difficulty passing stool?", answer: "" },
       ],
-      meta: "f the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 2 months",
     },
   ],
   questions2: [
@@ -140,6 +150,68 @@ const product1 = {
       "Has Triphala to balance all Vata, Pitta , kapha ( Tridosha)",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        1: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        2: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 3,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 
 const product2 = {
@@ -256,7 +328,7 @@ const product2 = {
           answer: "",
         },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Soothe Gut immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Soothe Gut immediately for 3 months",
     },
   ],
   questions2: [
@@ -293,6 +365,68 @@ const product2 = {
       "Jaiphal / Nutmeg and Bael fruit  enhances digestive power",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 const product3 = {
   name: "GUT EXPERT - Soothe Gut",
@@ -443,6 +577,68 @@ const product3 = {
       "Has Triphala to balance all Vata, Pitta , kapha ( Tridosha)",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 const product4 = {
   name: "GUT EXPERT - Rest n Calm",
@@ -593,6 +789,68 @@ const product4 = {
       "Jatamansi calms the nervous system due to its Tridosha balancing property",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 const product5 = {
   name: "GUT EXPERT - BloatJoy",
@@ -750,6 +1008,68 @@ const product5 = {
       "Haritaki imporves overall GUT function",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 const product6 = {
   name: "GUT EXPERT - Shred Max",
@@ -904,6 +1224,68 @@ const product6 = {
       "High Purity Shilajit 80% purity helps improve metabolism with Fulvic acid",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 const product7 = {
   name: "GUT EXPERT - LIVER Comfy",
@@ -1066,6 +1448,68 @@ const product7 = {
       "It also boosts liver enzymes levels",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 const product8 = {
   name: "GUT EXPERT - Gutsy Gut PRE+PROBIOTIC ",
@@ -1229,6 +1673,68 @@ const product8 = {
       "Prebiotics are the food on which the good bacteria grow",
     ],
   },
+  combos: [
+    {
+      id: 1,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Indigestion Management Pack Gastro Comfort + Gutsy Gut( Pre Probiotic )",
+      price: 360,
+      priceOnSelection: {
+        oneMonth: {
+          original: "2477",
+          offer: "1858",
+          saving: "619",
+        },
+        twoMonth: {
+          original: "4954",
+          offer: "3468",
+          saving: "1486",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Comprehensive Gut care plan Individualised Diet plan + unrestricted yoga + calorie counter + Gastro Comfort + Gutsy Gut + Free Dietician Access",
+      price: 3149,
+      priceOnSelection: {
+        1: {
+          original: "4140",
+          offer: "3105",
+          saving: "1035",
+        },
+        2: {
+          original: "8280",
+          offer: "5796",
+          saving: "2484",
+        },
+      },
+    },
+    {
+      id: 2,
+      image:
+        "https://www.cureveda.com/cdn/shop/files/chocolate.jpg?v=1724138121&width=1200",
+      name: "Individualised Diet Plan Diet Plan + recipe Library + calorie counter",
+      price: 3149,
+
+      priceOnSelection: {
+        1: {
+          original: "2050",
+          offer: "1350",
+          saving: "700",
+          duration: 1,
+        },
+        2: {
+          original: "4100",
+          offer: "1975",
+          saving: "2125",
+          duration: 2,
+        },
+      },
+    },
+  ],
 };
 
 export const ingredients = [
@@ -1298,6 +1804,80 @@ export const ingredients = [
     description: "Flower with powerful astringent and digestive properties.",
     hiddenText:
       "Dhataki Pushp is widely used in Ayurvedic formulations to support digestion, improve gut health, and promote overall wellness. It is particularly beneficial in managing diarrhea and other intestinal disorders.",
+  },
+  {
+    id: 9,
+    image: triphala,
+    title: "Triphala",
+    description: "It balances all Vata, Pitta , kapha.",
+    hiddenText:
+      "Triphala is a powerful herbal remedy that consists of Haritaki, Bibhitaki and amla. It is used in traditional Ayurvedic medicine to prevent diseases and treat a number of symptoms, including constipation and inflammation. It balances all Vata, Pitta , kapha ( Tridosha)",
+  },
+  {
+    id: 8,
+    image: trikatu,
+    title: "Trikatu",
+    description:
+      "Trikatu is an ayurvedic formulation of long pepper, black pepper, and ginger",
+    hiddenText:
+      "Trikatu is a classical ayurvedic formulation that combines the goodness of three herbs or spices, mainly, long pepper, black pepper, and ginger to create an absolute remedy for most Vata and Kapha derangements like digestive anomalies",
+  },
+  {
+    id: 8,
+    image: shilajit,
+    title: "Shilajit",
+    description: "Ayurvedic Natural composition for weight loss",
+    hiddenText:
+      "Shilajit is a 100% Ayurvedic Natural composition for weight loss . It is known to increase metabolic rates by helping the body burn more calories. The advantage will be observed in burning fat faster",
+  },
+  {
+    id: 8,
+    image: kutaki,
+    title: "Kutaki",
+    description: "Ayurvedic medicine to promote liver health",
+    hiddenText:
+      "Kutki (Picrorhiza kurroa) is commonly used in Ayurvedic medicine to promote liver health and has been found to have potential benefits for liver detox and fatty liver.",
+  },
+  {
+    id: 8,
+    image: rohini,
+    title: "Rohini",
+    description: "Ayurvedic medicine to promote liver health",
+    hiddenText:
+      "Kutki (Picrorhiza kurroa) is commonly used in Ayurvedic medicine to promote liver health and has been found to have potential benefits for liver detox and fatty liver.",
+  },
+  {
+    id: 8,
+    image: patol,
+    title: "Patol",
+    description:
+      "Plant is used for treating constipation, fever, skin infection.",
+    hiddenText:
+      "Parwal, Patol or Pointed-gourd(Trichosanthes dioica) plant is used for treating several diseases such as constipation, fever, skin infection, wounds, low appetite and digestion problems",
+  },
+  {
+    id: 8,
+    image: ajmoda,
+    title: "Ajmoda",
+    description: "Believed to stimulate the digestive fire",
+    hiddenText:
+      "Ajamoda is highly regarded for its carminative and digestive properties. It is believed to stimulate the digestive fire (agni) and alleviate indigestion, bloating, and acidity. ",
+  },
+  {
+    id: 8,
+    image: padma,
+    title: "Padma Beej ",
+    description: "Can help reduce stress, anxiety, and promote relaxation",
+    hiddenText:
+      "Consuming Padma seeds can help reduce stress, anxiety, and promote relaxation. In today's fast-paced world, finding ways to alleviate stress is crucial for maintaining mental health. Padma seeds can be a natural remedy, inducing a sense of calm and tranquility.",
+  },
+  {
+    id: 8,
+    image: cumin,
+    title: "Jeera",
+    description: "Known to promote digestion and boost pancreatic enzymes.",
+    hiddenText:
+      "Jeera, or cumin, is known to promote digestion and boost pancreatic enzymes. It contains thymol and essential oils that stimulate salivary glands, making digestion easier.",
   },
 ];
 

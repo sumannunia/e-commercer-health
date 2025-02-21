@@ -29,3 +29,27 @@
   top: 50%;
   transform: translateY(-50%);
 }
+.pricing {
+  display: flex;
+  column-gap: 10px;
+}
+.originalPrice {
+  text-decoration: line-through;
+  font-weight: 500;
+}
+.sellingPrice {
+  font-size: 18px;
+  font-weight: 700;
+}
+.discount {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  background: #40c057;
+  padding: 3px 7px;
+  font-size: 10px;
+  border-radius: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  left: 10px;
+}

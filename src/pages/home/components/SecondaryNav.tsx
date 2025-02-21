@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Group, Menu, Text } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import styles from "./SecondaryNav.module.css";
