@@ -27,6 +27,7 @@ export const useFetch = <T = unknown,>(url: string): UseFetchReturn<T> => {
       const response = await axiosInstance.get(url, {
         headers: {
           token: `${token}`,
+          // "Content-Type": "application/json",
         },
       });
       setData(response.data);

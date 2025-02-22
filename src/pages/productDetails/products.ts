@@ -216,6 +216,7 @@ const product1 = {
 
 const product2 = {
   name: "GUT EXPERT - LOOSE CONTROL",
+  bannerImage: constipationBanner,
   description:
     "LOOSE CONTROL is an Ayurvedic 100% herbal product, supports Digestive Health by regulating Bowel movement, It controls loose motion / diaorhea/ dysentery . It reduces inflamation in the interstines and controls loose stool. It is also effective in treating gastrointerstinal infections caused by bacteria , viruses or parasites .  The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form .",
   price: 1037,
@@ -430,6 +431,7 @@ const product2 = {
 };
 const product3 = {
   name: "GUT EXPERT - Soothe Gut",
+  bannerImage: constipationBanner,
   description:
     "Soothe Gut is an Ayurvedic 100% herbal product used as an antacid .  The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form . It has anti-inflammatory, antacid,  digestive stimulant and diuretic properties.",
   price: 1037,
@@ -642,6 +644,7 @@ const product3 = {
 };
 const product4 = {
   name: "GUT EXPERT - Rest n Calm",
+  bannerImage: constipationBanner,
   description:
     "Rest n Calm  contains 100 Natural Ayurveda compounds that help to calm the nervous system , reduce anxiety and treat loss of sleep. It serves as a soothing ritual, after a long day. The gentle, calming effect of SLEEP GOOD can help to lower cortisol levels, the hormone associated with stress, and enhance overall well-being.The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form .",
   price: 1037,
@@ -854,6 +857,7 @@ const product4 = {
 };
 const product5 = {
   name: "GUT EXPERT - BloatJoy",
+  bannerImage: constipationBanner,
   description:
     "BloatJoy is a Ayurvedic 100% herbal product with carminative properties to alleviate indigestion, bloating, and gas by promoting optimal digestion and easing discomfort after meals.Its digestive benefits extend to reducing flatulence, minimizing abdominal distension and discomfort. The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form .",
   price: 1037,
@@ -1073,6 +1077,7 @@ const product5 = {
 };
 const product6 = {
   name: "GUT EXPERT - Shred Max",
+  bannerImage: constipationBanner,
   description:
     "Shred Max is a 100% Ayurvedic Natural composition for weight loss . It is known to increase metabolic rates by helping the body burn more calories. The advantage will be observed in burning fat faster. The capusles uses extracts of herbs in ratio of 10:1 making it 10 times more effective than the powder form .  Shred Max uses Shilajit with 80% purity ( 80% Fulvik Acid )",
   price: 1037,
@@ -1289,8 +1294,9 @@ const product6 = {
 };
 const product7 = {
   name: "GUT EXPERT - LIVER Comfy",
+  bannerImage: constipationBanner,
   description:
-    " Liver Comfy is a 100% Ayurvedic Natural composition that can help support liver functions and loss of appetite.   It is very specific composition that improves liver function and regulates bile secretion.  This is also very specific drug for Jaundice .",
+    "Liver Comfy is a 100% Ayurvedic Natural composition that can help support liver functions and loss of appetite.   It is very specific composition that improves liver function and regulates bile secretion.  This is also very specific drug for Jaundice .",
   price: 1037,
   oldPrice: 1595,
   rating: 4.4,
@@ -1513,8 +1519,9 @@ const product7 = {
 };
 const product8 = {
   name: "GUT EXPERT - Gutsy Gut PRE+PROBIOTIC ",
+  bannerImage: constipationBanner,
   description:
-    " GUT EXPERT - Gutsy Gut PRE+PROBIOTIC--- is a probiotic and Prebiotic combination with 20 Billion IU . The combination of 19 strains of Bacteria makes it one of the most effective Pre-Probiotic combination available . You GUT needs a Prebiotic and Probiotic combination and not just any one because probiotics are live beneficial organisms, and prebiotics are the food that they need to survive . ",
+    "GUT EXPERT - Gutsy Gut PRE+PROBIOTIC--- is a probiotic and Prebiotic combination with 20 Billion IU . The combination of 19 strains of Bacteria makes it one of the most effective Pre-Probiotic combination available . You GUT needs a Prebiotic and Probiotic combination and not just any one because probiotics are live beneficial organisms, and prebiotics are the food that they need to survive . ",
   price: 1037,
   oldPrice: 1595,
   rating: 4.4,
