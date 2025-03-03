@@ -1,5 +1,4 @@
-import { Container, Grid, Title, Text, Button, Group } from "@mantine/core";
-import { IconArrowRight } from "@tabler/icons-react";
+import { Container, Grid, Title, Text, Group } from "@mantine/core";
 import styles from "./AboutUs.module.css"; // Custom CSS for responsiveness
 
 const AboutUs = () => {
@@ -14,39 +13,43 @@ const AboutUs = () => {
               <span className={styles.highlight}>Introduction</span> To <br />
               Who We Are
             </Title>
-            <Button
+            {/* <Button
               size="md"
               className={styles.aboutButton}
               rightSection={<IconArrowRight size={16} />}
             >
               About Us
-            </Button>
+            </Button> */}
           </Grid.Col>
 
           {/* Right Section - Text & Stats */}
           <Grid.Col span={{ sm: 12, md: 7 }} className={styles.content}>
-            <Text className={styles.description}>
+            <Text className={styles.description} fw={700} fs={"18px"}>
               Poor gut health may manifest as fatigue, upset stomach, Bloating ,
               Indigestion , Acidity , constipation , Weight Gain , skin
               conditions, and autoimmune challenges.
             </Text>
-            <Text className={styles.description} mt={"xs"}>
+            <Text className={styles.description} mt={"xs"} fw={700}>
               Solution is not simple. Solution is not just a Probiotic or an
               Antibiotic. Solution is a mix of Diet, calorie counting, exercise,
               natural Gut health supplements and expert advise.
             </Text>
-            <Text className={styles.description} mt={"xs"}>
+            <Text className={styles.description} mt={"xs"} fw={700}>
               We will handhold you through this scientific process of Happy Gut
               and Wellness.
             </Text>
             <Group gap="xl" mt="md">
               <div>
                 <Title className={styles.statNumber}>120k</Title>
-                <Text className={styles.statLabel}>Happy Customer</Text>
+                <Text className={styles.statLabel} fw={700}>
+                  Happy Customer
+                </Text>
               </div>
               <div>
                 <Title className={styles.statNumber}>90+</Title>
-                <Text className={styles.statLabel}>Products</Text>
+                <Text className={styles.statLabel} fw={700}>
+                  Products
+                </Text>
               </div>
             </Group>
           </Grid.Col>

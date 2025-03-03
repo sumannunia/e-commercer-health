@@ -71,7 +71,9 @@ const SelectablePlans = ({
           </Card>
         ))}
       </Group>
-      <ComboCart data={combos} selectedPlan={selectedPlan} />
+      {combos.length > 0 ? (
+        <ComboCart data={combos} selectedPlan={selectedPlan} />
+      ) : null}
     </Container>
   );
 };

@@ -22,6 +22,7 @@ import { usePut } from "../hooks/usePut";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../redux/store";
 import { fetchUserDetails } from "../redux/slices/authSlice";
+import RazorpayPayment from "./home/components/Razorpay";
 
 const validationSchema = Yup.object({
   address: Yup.string().required("Address is required"),
@@ -43,6 +44,7 @@ function CheckoutPage() {
   const [selectedAddress, setSelectedAddress] = useState(null);
   const user: any = useSelector((state: RootState) => state?.auth?.user);
   const cart: any = useSelector((state: RootState) => state?.cart);
+  console.log({ cart });
 
   const handleAddressChange = (value: any) => {
     setSelectedAddress(value);
@@ -291,9 +293,15 @@ function CheckoutPage() {
                 Including $0.00 in taxes
               </Text>
             </Stack>
-            <Button fullWidth color="#6a9948" my={"lg"}>
+            <RazorpayPayment
+              amount={
+                (cart.items.cartTotal && cart.items.cartTotal?.toFixed(2)) ||
+                "--"
+              }
+            />
+            {/* <Button fullWidth color="#6a9948" my={"lg"}>
               Checkout
-            </Button>
+            </Button> */}
           </Paper>
         </Grid.Col>
       </Grid>

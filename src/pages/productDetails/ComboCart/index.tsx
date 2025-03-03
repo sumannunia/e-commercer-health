@@ -20,18 +20,22 @@ const ComboCart = ({
   selectedPlan: number | null | string;
 }) => {
   const [selectedItems, setSelectedItems] = useState([true, true, false]);
-  console.log({ selectedPlan });
+
   const toggleSelection = (index: number) => {
     const newSelection = [...selectedItems];
     newSelection[index] = !newSelection[index];
     setSelectedItems(newSelection);
   };
 
-  const totalPrice = data.reduce(
-    (sum, product, index) => sum + (selectedItems[index] ? product.price : 0),
-    0
-  );
-  console.log({ data });
+  const totalPrice = data.reduce((sum, product, index) => {
+    console.log({ product });
+    return (
+      sum +
+      (selectedItems[index]
+        ? parseInt(product.priceOnSelection[selectedPlan as string]?.offer)
+        : 0)
+    );
+  }, 0);
 
   return (
     <Container size="md" px={0} className={styles.comboCart} mt={"md"}>
@@ -75,7 +79,7 @@ const ComboCart = ({
                   </span>
                 </Text>
               </Card>
-              {index === 0 && <Text className={styles.plusSign}>+</Text>}
+              {/* {index === 0 && <Text className={styles.plusSign}></Text>} */}
             </Grid.Col>
           ))}
           <Grid.Col span={12}>

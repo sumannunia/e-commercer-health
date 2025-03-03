@@ -12,6 +12,7 @@ type CartItem = {
   productName: string;
   price: number;
   quantity: number;
+  image?: string;
 };
 
 // Add item to cart API
@@ -23,6 +24,7 @@ export const addItemToCart = createAsyncThunk(
       productName: string;
       price: number;
       quantity: number;
+      image: string;
     },
     { getState, rejectWithValue, dispatch }
   ) => {
@@ -63,20 +65,39 @@ export const addItemToCart = createAsyncThunk(
     }
   }
 );
+// export const syncLocalCart = createAsyncThunk(
+//   "cart/syncLocalCart",
+//   async (_, { getState, dispatch }) => {
+//     const state: RootState = getState() as RootState;
+//     const localCartItems = state.cart.items;
+//     console.log({ localCartItems });
+//     // Sync each local cart item with the backend
+//     for (const item of localCartItems) {
+//       console.log({ item });
+//       await dispatch(addItemToCart(item)); // Dispatch addItemToCart for each item
+//     }
+
+//     // Clear local cart after successful sync
+//     dispatch(clearLocalCart());
+//   }
+// );
+
 export const syncLocalCart = createAsyncThunk(
   "cart/syncLocalCart",
   async (_, { getState, dispatch }) => {
     const state: RootState = getState() as RootState;
-    const localCartItems = state.cart.items;
-    console.log({ localCartItems });
-    // Sync each local cart item with the backend
+    const localCartItems =
+      state.cart.items || JSON.parse(localStorage.getItem("cart") || "[]");
+
+    if (!localCartItems.length) return;
+
+    // Sync local cart with API
     for (const item of localCartItems) {
-      console.log({ item });
-      await dispatch(addItemToCart(item)); // Dispatch addItemToCart for each item
+      await dispatch(addItemToCart(item));
     }
 
-    // Clear local cart after successful sync
-    dispatch(clearLocalCart());
+    // Clear local storage cart after successful sync
+    localStorage.removeItem("cart");
   }
 );
 
@@ -115,10 +136,16 @@ export const fetchCart = createAsyncThunk(
     try {
       const token = (getState() as RootState).auth.user.token; // Get the token from the auth state
       const response = await axiosInstance.get("/cart", { headers: { token } });
+      // Store in localStorage
+      localStorage.setItem("cart", JSON.stringify(response.data.items));
       return response.data;
     } catch (error: any) {
+      console.error("Cart API failed, loading from localStorage", error);
+      const storedCart = localStorage.getItem("cart");
+
       handleApiError(error);
-      return rejectWithValue(error.response.data || "Failed to fetch cart");
+      rejectWithValue(error.response.data || "Failed to fetch cart");
+      return storedCart ? JSON.parse(storedCart) : [];
     }
   }
 );
@@ -184,8 +211,9 @@ interface CartState {
   error: string | null;
 }
 
+const storedCart = localStorage.getItem("cart");
 const initialState: CartState = {
-  items: [],
+  items: storedCart ? JSON.parse(storedCart) : [], // Load from localStorage if available
   loading: false,
   error: null,
 };
@@ -198,9 +226,11 @@ const cartSlice = createSlice({
       // Check if the item already exists in the local cart
 
       state.items = action.payload; // Push new item if it doesn't exist
+      // localStorage.setItem("cart", JSON.stringify(state.items));
     },
     clearLocalCart: (state) => {
       state.items = []; // Clear the local cart
+      // localStorage.removeItem("cart");
     },
   },
   extraReducers: (builder) => {
@@ -215,11 +245,13 @@ const cartSlice = createSlice({
         state.loading = false;
 
         state.items = action.payload; // Update the cart items from the response
+        // localStorage.setItem("cart", JSON.stringify(state.items));
       }
     );
     builder.addCase(addItemToCart.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload as string;
+      // localStorage.setItem("cart", JSON.stringify(action.payload));
     });
 
     // Remove item from cart
@@ -236,6 +268,7 @@ const cartSlice = createSlice({
     builder.addCase(removeItemFromCart.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload as string;
+      // localStorage.removeItem("cart");
     });
 
     // Fetch cart

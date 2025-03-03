@@ -8,7 +8,6 @@ import {
   Image,
   Button,
   Group,
-  Anchor,
   Divider,
   Center,
 } from "@mantine/core";
@@ -22,8 +21,7 @@ import {
   incrementItemQuantity,
   removeItemFromCart,
 } from "../redux/slices/cartSlice";
-
-const imgPaths = {};
+import ErrorBoundary from "../utils/ErrorBoundary";
 
 function CartPage() {
   const cartItems = useSelector((state: any) => {
@@ -35,12 +33,10 @@ function CartPage() {
   });
 
   const state = useSelector((state: RootState) => state?.auth?.user);
-  console.log({ state, cartItems });
   const user = useSelector((state: RootState) => state?.auth?.user);
   // const [cartItems, setCartItems] = useState<CartItem[]>(initialCartItems);
   const dispatch = useAppDispatch();
   const handleIncrement = (productId: number) => {
-    console.log({ productId });
     dispatch(incrementItemQuantity({ productId }));
   };
 
@@ -67,80 +63,78 @@ function CartPage() {
   console.log({ cartItems });
 
   return (
-    <Container>
-      {/* Cart Title */}
-      <Center my="lg">
-        <Title>My Cart</Title>
-      </Center>
+    <ErrorBoundary>
+      <Container>
+        {/* Cart Title */}
+        <Center my="xl">
+          <Title>My Cart</Title>
+        </Center>
 
-      {/* Free Shipping Link */}
-      <Center my="sm">
+        {/* Free Shipping Link */}
+        {/* <Center my="sm">
         <Anchor href="#">Enjoy free shipping on all orders!</Anchor>
-      </Center>
+      </Center> */}
 
-      {/* Cart Items */}
-      {state &&
-        cartItems?.map(({ cartItemQuantity, cartProduct }: any) => (
-          <>
-            <Grid
-              align="center"
-              justify="space-between"
-              my="lg"
-              key={cartProduct?.productId}
-              columns={12}
-            >
-              {/* Product Image */}
-              <Grid.Col span={{ sm: 12, md: 3, lg: 2 }}>
-                <Image
-                  // src={cartProduct.image}
-                  src={
-                    imgPaths[cartProduct?.productName as keyof typeof imgPaths]
-                  }
-                  alt={cartProduct?.productName}
-                  width={100}
-                  height={100}
-                />
-              </Grid.Col>
+        {/* Cart Items */}
+        {state &&
+          cartItems?.map(({ cartProduct }: any) => {
+            return (
+              <>
+                <Grid
+                  align="center"
+                  justify="space-between"
+                  my="lg"
+                  key={cartProduct?.productId}
+                  columns={12}
+                >
+                  {/* Product Image */}
+                  <Grid.Col span={{ sm: 12, md: 3, lg: 2 }}>
+                    <Image
+                      src={cartProduct?.image}
+                      alt={cartProduct?.productName}
+                      width={100}
+                      height={100}
+                    />
+                  </Grid.Col>
 
-              {/* Product Details */}
-              <Grid.Col span={{ sm: 12, md: 5, lg: 5 }}>
-                <Text size="sm">{cartProduct?.manufacturer}</Text>
-                <Text size="md">{cartProduct?.productName}</Text>
-                <Text size="sm">Size: {cartProduct?.size}</Text>
-                <Text size="md">${cartProduct?.price.toFixed(2)}</Text>
-              </Grid.Col>
+                  {/* Product Details */}
+                  <Grid.Col span={{ sm: 12, md: 5, lg: 5 }}>
+                    <Text size="sm">{cartProduct?.manufacturer}</Text>
+                    <Text size="md">{cartProduct?.productName}</Text>
+                    <Text size="md">₹{cartProduct?.price?.toFixed(2)}</Text>
+                  </Grid.Col>
 
-              {/* Quantity and Remove */}
-              <Grid.Col
-                span={{ sm: 12, md: 3, lg: 2 }}
-                style={{ textAlign: "center" }}
-              >
-                <Group gap="sm" justify="center">
-                  <Button
-                    variant="outline"
-                    onClick={() =>
-                      handleRemove(
-                        cartProduct?.productId,
-                        cartProduct?.productName,
-                        cartProduct?.price,
-                        cartItemQuantity - 1
-                      )
-                    }
+                  {/* Quantity and Remove */}
+                  <Grid.Col
+                    span={{ sm: 12, md: 3, lg: 2 }}
+                    style={{ textAlign: "center" }}
                   >
-                    <FiMinus size={16} />
-                  </Button>
-                  <Text>{cartItemQuantity}</Text>
-                  <Button
-                    variant="outline"
-                    onClick={() => handleIncrement(cartProduct?.productId)}
-                  >
-                    <FiPlus size={16} />
-                  </Button>
-                </Group>
-              </Grid.Col>
+                    <Group gap="sm" justify="center">
+                      <Button
+                        variant="outline"
+                        onClick={() =>
+                          handleRemove(
+                            cartProduct?.productId,
+                            cartProduct?.productName,
+                            cartProduct?.price,
+                            cartProduct?.quantity - 1
+                          )
+                        }
+                      >
+                        <FiMinus size={16} />
+                      </Button>
+                      <Text>{cartProduct?.quantity}</Text>
+                      <Button
+                        variant="outline"
+                        onClick={() => handleIncrement(cartProduct?.productId)}
+                      >
+                        <FiPlus size={16} />
+                      </Button>
+                    </Group>
+                  </Grid.Col>
 
-              {/* Remove Link */}
-              {/* <Grid.Col
+                  {/* Remove Link */}
+                  {/* <Grid.Col
               span={{ sm: 12, md: 1, lg: 1 }}
               style={{ textAlign: "right" }}
             >
@@ -151,77 +145,78 @@ function CartPage() {
                     cartProduct?.productId,
                     cartProduct.productName,
                     cartProduct.price,
-                    cartItemQuantity
+                    cartProduct?.quantity
                   )
                 }
               >
                 Remove
               </Anchor>
             </Grid.Col> */}
-            </Grid>
-            <Divider />
-          </>
-        ))}
-      {!state &&
-        cartItems?.map((item: any) => (
-          <>
-            <Grid
-              align="center"
-              justify="space-between"
-              my="lg"
-              key={item?.productId + "itemOfCart"}
-              columns={12}
-            >
-              {/* Product Image */}
-              <Grid.Col span={{ sm: 12, md: 3, lg: 2 }}>
-                <Image
-                  // src={cartProduct.image}
-                  src={imgPaths[item?.productName as keyof typeof imgPaths]}
-                  alt={item?.productName}
-                  width={100}
-                  height={100}
-                />
-              </Grid.Col>
-
-              {/* Product Details */}
-              <Grid.Col span={{ sm: 12, md: 5, lg: 5 }}>
-                <Text size="sm">{item?.manufacturer}</Text>
-                <Text size="md">{item?.productName}</Text>
-                <Text size="sm">Size: {item?.size}</Text>
-                <Text size="md">${item?.price.toFixed(2)}</Text>
-              </Grid.Col>
-
-              {/* Quantity and Remove */}
-              <Grid.Col
-                span={{ sm: 12, md: 3, lg: 2 }}
-                style={{ textAlign: "center" }}
+                </Grid>
+                <Divider />
+              </>
+            );
+          })}
+        {!state &&
+          cartItems?.map((item: any) => (
+            <>
+              <Grid
+                align="center"
+                justify="space-between"
+                my="lg"
+                key={item?.productId + "itemOfCart"}
+                columns={12}
               >
-                <Group gap="sm" justify="center">
-                  <Button
-                    variant="outline"
-                    onClick={() =>
-                      handleRemove(
-                        item?.productId,
-                        item?.productName,
-                        item?.price,
-                        item?.quantity - 1
-                      )
-                    }
-                  >
-                    <FiMinus size={16} />
-                  </Button>
-                  <Text>{item?.quantity}</Text>
-                  <Button
-                    variant="outline"
-                    onClick={() => handleIncrement(item?.productId)}
-                  >
-                    <FiPlus size={16} />
-                  </Button>
-                </Group>
-              </Grid.Col>
+                {/* Product Image */}
+                <Grid.Col span={{ sm: 12, md: 3, lg: 2 }}>
+                  <Image
+                    // src={cartProduct.image}
+                    src={item?.image}
+                    alt={item?.productName}
+                    width={100}
+                    height={100}
+                  />
+                </Grid.Col>
 
-              {/* Remove Link */}
-              {/* <Grid.Col
+                {/* Product Details */}
+                <Grid.Col span={{ sm: 12, md: 5, lg: 5 }}>
+                  <Text size="sm">{item?.manufacturer}</Text>
+                  <Text size="md">{item?.productName}</Text>
+
+                  <Text size="md">₹{item?.price.toFixed(2)}</Text>
+                </Grid.Col>
+
+                {/* Quantity and Remove */}
+                <Grid.Col
+                  span={{ sm: 12, md: 3, lg: 2 }}
+                  style={{ textAlign: "center" }}
+                >
+                  <Group gap="sm" justify="center">
+                    <Button
+                      variant="outline"
+                      onClick={() =>
+                        handleRemove(
+                          item?.productId,
+                          item?.productName,
+                          item?.price,
+                          item?.quantity - 1
+                        )
+                      }
+                    >
+                      <FiMinus size={16} />
+                    </Button>
+                    <Text>{item?.quantity}</Text>
+                    <Button
+                      variant="outline"
+                      onClick={() => handleIncrement(item?.productId)}
+                    >
+                      <FiPlus size={16} />
+                    </Button>
+                  </Group>
+                </Grid.Col>
+
+                {/* Remove Link */}
+                {/* <Grid.Col
               span={{ sm: 12, md: 1, lg: 1 }}
               style={{ textAlign: "right" }}
             >
@@ -232,42 +227,43 @@ function CartPage() {
                     cartProduct?.productId,
                     cartProduct.productName,
                     cartProduct.price,
-                    cartItemQuantity
+                    cartProduct?.quantity
                   )
                 }
               >
                 Remove
               </Anchor>
             </Grid.Col> */}
-            </Grid>
-            <Divider />
-          </>
-        ))}
+              </Grid>
+              <Divider />
+            </>
+          ))}
 
-      {/* Divider */}
-      <Divider my="lg" />
+        {/* Divider */}
+        <Divider my="lg" />
 
-      {/* Subtotal and Checkout Section */}
-      <Grid justify="space-between" align="center">
-        {/* Left Empty */}
-        <Grid.Col span={{ md: 7, sm: 12 }} />
+        {/* Subtotal and Checkout Section */}
+        <Grid justify="space-between" align="center">
+          {/* Left Empty */}
+          <Grid.Col span={{ md: 7, sm: 12 }} />
 
-        {/* Subtotal Section */}
-        <Grid.Col span={{ md: 5, sm: 12 }}>
-          {/* <Text size="md">Subtotal: ${subtotal.toFixed(2)}</Text> */}
-          <Text size="sm" color="dimmed">
-            Shipping & taxes calculated at checkout
-          </Text>
+          {/* Subtotal Section */}
+          <Grid.Col span={{ md: 5, sm: 12 }}>
+            {/* <Text size="md">Subtotal: ${subtotal.toFixed(2)}</Text> */}
+            <Text size="sm" color="dimmed">
+              Shipping & taxes calculated at checkout
+            </Text>
 
-          {/* Proceed to Checkout Button */}
-          <Link to={user ? "/checkout" : "/login/user?returnUrl=/checkout"}>
-            <Button fullWidth radius="md" my="lg" size="md" color="#6A9948">
-              Proceed to checkout
-            </Button>
-          </Link>
-        </Grid.Col>
-      </Grid>
-    </Container>
+            {/* Proceed to Checkout Button */}
+            <Link to={user ? "/checkout" : "/login?returnUrl=/checkout"}>
+              <Button fullWidth radius="md" my="lg" size="md" color="#6A9948">
+                Proceed to checkout
+              </Button>
+            </Link>
+          </Grid.Col>
+        </Grid>
+      </Container>
+    </ErrorBoundary>
   );
 }
 

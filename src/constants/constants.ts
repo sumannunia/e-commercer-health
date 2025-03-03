@@ -10,6 +10,7 @@ export const categories = [
   { link: "bloating", label: "Bloating" },
   { link: "weight-loss", label: "Weight Loss" },
   { link: "liver-detox", label: "Liver Detox" },
-  { link: "combos", label: "Combos" },
   { link: "gut-testing", label: "Gut Testing" },
+  { link: "combos", label: "Management Pack" },
+  { link: "comprehensive-plans", label: "Comprehensive Plans" },
 ];

@@ -23,6 +23,13 @@ export const useFetch = <T = unknown,>(url: string): UseFetchReturn<T> => {
     setLoading(true);
     setError(null);
 
+    // const response = await axiosInstance.get(url, {
+    //   headers: {
+    //     token: `${token}`,
+    //     // "Content-Type": "application/json",
+    //   },
+    // });
+
     try {
       const response = await axiosInstance.get(url, {
         headers: {

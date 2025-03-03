@@ -93,8 +93,12 @@ export const fetchUserDetails = createAsyncThunk(
           token: data?.token, // Get token from localStorage
         },
       });
-      dispatch(fetchCart());
+
+      // dispatch(fetchCart());
       const user = { ...data?.data, ...response?.data };
+      if (user?.token) {
+        dispatch(fetchCart()); // Fetch cart only if user is authenticated
+      }
       return user;
     } catch (error) {
       return rejectWithValue(handleApiError(error));

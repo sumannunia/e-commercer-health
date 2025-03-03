@@ -26,7 +26,7 @@ const menuItems: any = {
     { label: "Sleep / Stress", link: "/products/4/rest-n-calm" },
     { label: "Bloating", link: "/products/5/bloat-joy" },
   ],
-  "Pre and Pro Biotic": { link: "products/pre-pro-biotic" },
+  "Pre and Pro Biotic": { link: "/products/10/pre-pro-biotic" },
 };
 
 // const ellipsisData = [

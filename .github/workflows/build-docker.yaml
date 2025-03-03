@@ -1,0 +1,23 @@
+name: Build and publish image on docker hub
+on:
+  [workflow_dispatch]
+
+  jobs:
+    publish_images:
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout
+          uses: actions/checkout@v4
+
+        - name: Build and tag Docker image
+          env:
+            REPO_URI: sumannunia/e-commerce-health
+          run: |
+            docker build --platform linux/amd64  --no-cache -f Dockerfile -t ui/$REPO_URI:latest .
+            docker tag $REPO_URI:latest $REPO_URI:latest
+        - name: Push to Docker Hub
+        env:
+          REPO_URI: sumannunia/e-commerce-health
+        run: |
+          docker push $REPO_URI:latest
+          

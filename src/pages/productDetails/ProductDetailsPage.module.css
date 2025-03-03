@@ -110,3 +110,30 @@
 .qualityText {
   text-align: center;
 }
+.bannerWrapper {
+  position: relative;
+}
+.bannerListsWrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #b02f3061;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 1rem;
+  font-weight: 700;
+  color: #fff;
+  font-size: 18px !important;
+}
+.listBannerItem {
+  padding: 2px 10px;
+  background: #b02f30;
+  border-radius: 25px;
+}
+.badeBanner span {
+  white-space: unset !important;
+}

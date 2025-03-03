@@ -33,7 +33,7 @@ interface Product {
   duration: string[];
   tag: string[];
   active: string;
-  link: string;
+  link: string | null;
 }
 
 const products: Product[] = [
@@ -50,7 +50,7 @@ const products: Product[] = [
     category: ["Constipation", "Indigestion", "Loss of Apetite"],
     duration: ["15 Days", "1 Month"],
     active: "15 Days",
-    tag: ["indigestion", "constipation", "loss-of-apetite"],
+    tag: ["indigestion", "constipation", "loss-of-apetite", "all"],
     link: "gastro-comfort",
   },
   {
@@ -66,7 +66,7 @@ const products: Product[] = [
     category: ["Loose Motion"],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["loose-motion"],
+    tag: ["loose-motion", "all"],
     link: "loose-control",
   },
   {
@@ -82,7 +82,7 @@ const products: Product[] = [
     category: ["Acidic Reflux"],
     duration: ["15 Days", "1 Month"],
     active: "1 Month",
-    tag: ["acidic-reflux", "acidity"],
+    tag: ["acidic-reflux", "acidity", "all"],
     link: "soothe-gut",
   },
   {
@@ -98,7 +98,7 @@ const products: Product[] = [
     category: ["Sleep/ Stress"],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["stress-and-sleep"],
+    tag: ["stress-and-sleep", "all"],
     link: "rest-n-calm",
   },
   {
@@ -114,7 +114,7 @@ const products: Product[] = [
     category: ["Bloating"],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["bloating"],
+    tag: ["bloating", "all"],
     link: "bloat-joy",
   },
   {
@@ -130,7 +130,7 @@ const products: Product[] = [
     category: ["Wieght Loss"],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["weight-loss"],
+    tag: ["weight-loss", "all"],
     link: "shred-max",
   },
   {
@@ -146,7 +146,7 @@ const products: Product[] = [
     category: ["Liver Detox "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["liver-detox"],
+    tag: ["liver-detox", "all"],
     link: "liver-comfy",
   },
   {
@@ -162,7 +162,7 @@ const products: Product[] = [
     category: ["Pre and Pro Biotic capsule "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["pre-pro-biotic"],
+    tag: ["pre-pro-biotic", "all"],
     link: "flora-pre-probiotic",
   },
   {
@@ -178,7 +178,7 @@ const products: Product[] = [
     category: ["Indigeston Management Pack"],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["indigestion", "combos", "pre-pro-biotic"],
+    tag: ["indigestion", "combos", "pre-pro-biotic", "all"],
     link: "gastro-comfort",
   },
   {
@@ -194,7 +194,7 @@ const products: Product[] = [
     category: ["Loose Motion management pack "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["loose-motion", "pre-pro-biotic", "combos"],
+    tag: ["loose-motion", "pre-pro-biotic", "combos", "all"],
     link: "loose-control",
   },
   {
@@ -210,7 +210,14 @@ const products: Product[] = [
     category: ["Acid Reflux management pack "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["pre-pro-biotic", "combos", "indigestion", "bloating", "acidity"],
+    tag: [
+      "pre-pro-biotic",
+      "combos",
+      "indigestion",
+      "bloating",
+      "acidity",
+      "all",
+    ],
     link: "soothe-gut",
   },
   {
@@ -226,7 +233,7 @@ const products: Product[] = [
     category: ["Liver Care"],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["bloating", "combos"],
+    tag: ["bloating", "combos", "all"],
     link: "bloat-joy",
   },
   {
@@ -242,7 +249,7 @@ const products: Product[] = [
     category: ["Bloating Relief management Pack "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["bloating", "gut-testing"],
+    tag: ["bloating", "gut-testing", "all"],
     link: "liver-comfy",
   },
 
@@ -259,7 +266,7 @@ const products: Product[] = [
     category: ["Individualised Diet Plan "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["weight-loss", "combos"],
+    tag: ["weight-loss", "combos", "all"],
     link: "shred-max",
   },
   {
@@ -275,8 +282,120 @@ const products: Product[] = [
     category: ["Comprehensive Weight Loss pck "],
     duration: ["1 Month", "2 Months"],
     active: "1 Month",
-    tag: ["weight-loss", "liver-detox", "combos"],
+    tag: ["weight-loss", "liver-detox", "combos", "all"],
     link: "liver-comfy",
+  },
+  {
+    id: 17,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Individualised Diet plan + unrestricted yoga + calorie counter +Gastro Comfort +Gutsy Gut + Free Dietician Access ",
+    description: "Eye Supplement With Lutein",
+    price: 3105,
+    oldPrice: 4140,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Comprehensive Gut care plan"],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
+  },
+  {
+    id: 18,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Individualised Diet plan + unrestricted yoga + calorie counter +Soothe Gut  + Gutsy Gut + Free Dietician Access ",
+    description: "Eye Supplement With Lutein",
+    price: 3105,
+    oldPrice: 4140,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Comprehensive Acidity Care plan"],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
+  },
+  {
+    id: 19,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Individualised Diet plan + unrestricted yoga + calorie counter +Bloat Joy  +Gutsy Gut + Free Dietician Access ",
+    description: "Eye Supplement With Lutein",
+    price: 3105,
+    oldPrice: 4140,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Comprehensive Bloat care plan"],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
+  },
+  {
+    id: 20,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Individualised Diet plan + unrestricted yoga + calorie counter + Shred Max + Pre-Probiotic + Free Dietician access ",
+    description: "Eye Supplement With Lutein",
+    price: 3459,
+    oldPrice: 4613,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Comprehensive Weight Loss  plan"],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
+  },
+  {
+    id: 21,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Individualised Diet plan + unrestricted yoga + calorie counter + Liver Comfy + Gutsy Gut Pre Pro Biotic  + Free Dietician Access ",
+    description: "Eye Supplement With Lutein",
+    price: 3459,
+    oldPrice: 4613,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Comprehensive Liver care plan "],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
+  },
+  {
+    id: 22,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Lactose ( Only In Delhi ) ",
+    description: "Eye Supplement With Lutein",
+    price: 2500,
+    oldPrice: 2500,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Breath Test for Gut "],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
+  },
+  {
+    id: 23,
+    image:
+      "https://thegoodbug.com/cdn/shop/products/2.ByeByeBloat_6c5b5492-b64f-4a2a-9a4c-2109f10a0ee1.jpg?v=1724607468&width=533",
+    name: "Diet Plan + recipe Library + calorie counter ",
+    description: "Eye Supplement With Lutein",
+    price: 1350,
+    oldPrice: 2050,
+    rating: 4.6,
+    reviews: 59,
+    category: ["Individualised Diet Plan "],
+    duration: ["1 Month", "2 Months"],
+    active: "1 Month",
+    tag: ["comprehensive-plans", "combos", "all"],
+    link: null,
   },
 
   // Add more products as needed
@@ -284,26 +403,32 @@ const products: Product[] = [
 
 const AllProductsPage = () => {
   const { productId } = useParams();
-  const [activeCategory, setActiveCategory] = useState<string | undefined>(
-    productId
-  );
+  console.log({ productId });
+
+  const [activeCategory, setActiveCategory] = useState<any>(productId);
   const handleCategoryClick = (category: string) => {
-    setActiveCategory(category === "All" ? "" : category);
+    console.log({ category });
+    setActiveCategory(category === "All" ? "" : productId);
   };
   const dispatch = useAppDispatch();
   const { loading }: any = useFetch("/products");
 
   const handleAddToCart = (product: any) => {
-    const { productId, productName, price } = product || {};
+    const { id, name, price, image } = product || {};
     dispatch(
       addItemToCart({
-        productId,
-        productName,
+        productId: id,
+        productName: name,
         price,
         quantity: 1,
+        image,
       })
     );
   };
+
+  console.log({
+    lol: products.filter((item) => item.tag.includes(productId as string)),
+  });
   return (
     <div className={styles.pageWrapper}>
       {/* Full-width Background for Categories */}
@@ -342,27 +467,32 @@ const AllProductsPage = () => {
       {/* Products Section */}
       <Container px="md" className={styles.productsSection}>
         <Text size="xl" mb="lg" fw={600} className={styles.categoryName}>
-          {activeCategory ? activeCategory : "Bestsellers"}
+          {activeCategory
+            ? categories.find(
+                (item: any) => item.link == productId?.toLowerCase()
+              )?.label
+            : "Bestsellers"}
         </Text>
         <Grid gutter="lg">
+          {products
+            .filter((item) => item.tag.includes(productId as string))
+            .map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onCartClick={handleAddToCart}
+              />
+            ))}
           {loading ? <Loader /> : ""}
-          {activeCategory && !loading && productId !== "all"
-            ? products
-                .filter((item) => item.tag.includes(productId || ""))
-                .map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onCartClick={handleAddToCart}
-                  />
-                ))
+          {/* {!loading && productId !== "all"
+            ? 
             : products.map((product) => (
                 <ProductCard
                   key={product.id}
                   product={product}
                   onCartClick={handleAddToCart}
                 />
-              ))}
+              ))} */}
         </Grid>
       </Container>
     </div>
@@ -379,27 +509,42 @@ const ProductCard: FC<ProductCardProps> = ({ product, onCartClick }) => {
     <Grid.Col span={{ xs: 12, sm: 6, md: 3 }}>
       <Card shadow="sm" radius="md" withBorder className={styles.productCard}>
         <Card.Section>
-          <Link
-            to={`/products/${product.id}/${product.link}`}
-            className={styles.linkCard}
-          >
+          {product.link ? (
+            <Link
+              to={`/products/${product.id}/${product.link}`}
+              className={styles.linkCard}
+            >
+              <Image
+                src={product.image}
+                alt={product.name}
+                height={200}
+                fit="cover"
+              />
+            </Link>
+          ) : (
             <Image
               src={product.image}
               alt={product.name}
               height={200}
               fit="cover"
             />
-          </Link>
+          )}
         </Card.Section>
-
-        <Link
-          to={`/products/${product.id}/${product.link}`}
-          className={styles.cardName}
-        >
+        {product.link ? (
+          <Link
+            to={`/products/${product.id}/${product.link}`}
+            className={styles.cardName}
+          >
+            <Text fw={500} size="lg" mt="md">
+              {product.name}
+            </Text>
+          </Link>
+        ) : (
           <Text fw={500} size="lg" mt="md">
             {product.name}
           </Text>
-        </Link>
+        )}
+
         <Group gap="xs" mt="xs">
           {product.category?.map((cat) => (
             <Badge color="dark" variant="filled" className={styles.cardBadge}>

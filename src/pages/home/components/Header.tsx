@@ -39,7 +39,7 @@ const ellipsisData = [
   },
   {
     label: "Diagnostic Gut testing",
-    link: "/quiz",
+    link: "/products/1/diagnostic-gut-testing",
   },
   {
     label: "Liver Detox",
@@ -47,7 +47,7 @@ const ellipsisData = [
   },
   {
     label: "Individualised Diet plan",
-    link: "/quiz",
+    link: "/products/1/diagnostic-gut-testing",
   },
 ];
 
@@ -126,8 +126,15 @@ const Logo = ({ close }: { close: any }) => {
   );
 };
 const RightSection = ({ close }: { close: any }) => {
-  const [cartItemsCount] = useState(0); // Example count state
   const navigate = useNavigate();
+  const cartItems = useSelector((state: any) => {
+    if (state.auth.user) {
+      return state?.cart?.items?.cartItems;
+    }
+    return state?.cart?.items;
+  });
+  console.log({ cartItems });
+
   return (
     <Group gap="md" className={styles.icons}>
       {ellipsisData.map((elepseItem: { link: string; label: string }) => (
@@ -136,12 +143,9 @@ const RightSection = ({ close }: { close: any }) => {
         </Link>
       ))}
       <UserMenu />
-      {/* <ActionIcon variant="transparent" size="lg">
-            <IconSearch size={24} stroke={1.5} />
-          </ActionIcon> */}
       <Indicator
         onClick={close}
-        label={cartItemsCount}
+        label={cartItems?.length}
         size={16}
         color="yellow"
         offset={5}

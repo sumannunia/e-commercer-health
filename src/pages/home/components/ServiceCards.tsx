@@ -43,7 +43,7 @@ const data = [
   {
     title: "Calorie counter",
     image: calorie,
-    link: "/qr-app",
+    link: "/quiz",
     description:
       "Antibiotics can disrupt gut health. Support your gut with balanced nutrition.",
   },
