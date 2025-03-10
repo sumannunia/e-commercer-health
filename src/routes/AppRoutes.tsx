@@ -30,6 +30,7 @@ import Fitness from "../pages/fitness";
 import Exercise from "../pages/fitness/Exercise";
 import Recipies from "../pages/recipies";
 import PreProBiotics from "../pages/pre-pro-biotics";
+import AboutUs from "../pages/about";
 
 const AppRoutes = () => {
   return (
@@ -43,6 +44,7 @@ const AppRoutes = () => {
           <Route path="/login/seller" element={<LoginForm />} />
           <Route path="/login" element={<LoginUserForm />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/ingredients" element={<Ingredients />} />
           <Route path="/orders" element={<OrdersPage />} />

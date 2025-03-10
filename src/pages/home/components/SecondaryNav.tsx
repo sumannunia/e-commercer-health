@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const menuItems: any = {
   Science: [
     { label: "Diet and Gut", link: "/science/diet-and-gut" },
-    { label: "Vedic and GUT", link: "/science/vedic-and-gut" },
+    { label: "Vedic and Gut", link: "/science/vedic-and-gut" },
     { label: "Clinical Gut Test", link: "/science/clinical-gut-test" },
   ],
   "Shop All": { link: "/products/all" },

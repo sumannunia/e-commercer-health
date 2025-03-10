@@ -14,7 +14,7 @@ import rohini from "../../assets/images/ingredients/rohini.webp";
 import patol from "../../assets/images/ingredients/parwal.webp";
 import ajmoda from "../../assets/images/ingredients/ajmoda.webp";
 import padma from "../../assets/images/ingredients/padma.webp";
-import cumin from "../../assets/images/ingredients/cumin_jeera.webp";
+// import cumin from "../../assets/images/ingredients/cumin_jeera.webp";
 // banners
 import constipationBanner from "../../assets/images/indigestion_banner.webp";
 import motionBanner from "../../assets/images/loosemotion_banner.webp";
@@ -24,6 +24,7 @@ import bloatingBanner from "../../assets/images/bloating_banner.webp";
 import weightLoassBanner from "../../assets/images/weight_loss_banner.webp";
 import liverBanner from "../../assets/images/liver_banner.png";
 import prebioticBanner from "../../assets/images/prebiotic_banner.webp";
+import dietPlan from "../../assets/diet-and-gut/diet_plan.webp";
 const product1 = {
   name: "GUT EXPERT - Gastro Comfort",
   id: 1,
@@ -344,7 +345,7 @@ const product2 = {
           answer: "",
         },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Soothe Gut immediately for 3 months",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Loose Control immediately for 3 months",
     },
   ],
   questions2: [
@@ -538,7 +539,7 @@ const product3 = {
         { question: "Do you Frequent burping or hiccups?", answer: "" },
         { question: "Do you get Heartburn?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start Soothe Gut immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -1372,10 +1373,10 @@ const product7 = {
         { question: "You don’t feel healthy?", answer: "" },
         { question: "Your skin isn’t clear?", answer: "" },
         { question: "You feel tired all the time?", answer: "" },
-        { question: "You’re always fogg?", answer: "" },
+
         { question: "You have regular joint pain?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  Liver Comfy immediately for 3 months to start",
     },
   ],
   questions2: [
@@ -1781,10 +1782,179 @@ const product9 = {
         { question: "You don’t feel healthy?", answer: "" },
         { question: "Your skin isn’t clear?", answer: "" },
         { question: "You feel tired all the time?", answer: "" },
-        { question: "You’re always fogg?", answer: "" },
         { question: "You have regular joint pain?", answer: "" },
       ],
-      meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
+      meta: "If the answer to even 3 of the above is yes then you need to start  breath test immediately for 3 months to start",
+    },
+  ],
+  questions2: [
+    {
+      title: "How do we help ?",
+      data: [
+        {
+          question: "Liver Comfy",
+          answer: "",
+        },
+        {
+          question: "regulates Bile Function to improve Liver Function ",
+          answer: "",
+        },
+        {
+          question:
+            "Kutki and Kalmeg stimulates bile acid secretion to improve digestion",
+          answer: "",
+        },
+        {
+          question: "It eliminates toxins",
+          answer: "",
+        },
+        {
+          question: "It also boosts liver enzymes levels",
+          answer: "",
+        },
+      ],
+      meta: "",
+    },
+  ],
+  howDoWeHelp: {
+    title: "Liver Comfy",
+    info: [
+      "regulates Bile Function to improve Liver Function",
+      "Kutki and Kalmeg stimulates bile acid secretion to improve digestion",
+      "It eliminates toxins ",
+      "It also boosts liver enzymes levels",
+    ],
+  },
+  combos: [],
+};
+const product11 = {
+  id: 9,
+  name: "Individualized Diet Plans",
+  bannerImage: dietPlan,
+  description:
+    "We specialize in creating individualized diet plans tailored to address a wide range of health conditions. Whether you suffer from digestive issues like nausea, indigestion, or bloating, or more complex conditions such as diabetes, cardiovascular disease, or obesity, our expert team crafts personalized nutrition strategies designed to support your unique health needs.",
+  price: 1037,
+  oldPrice: 1595,
+  rating: 4.4,
+  reviews: 2233,
+  indications: [
+    "Digestive Issues",
+    "Diabetes",
+    "Cardiovascular Disease",
+    "Obesity",
+  ],
+  principalIngredients: "N/A",
+  benefits: [
+    "Targeted Plans",
+    "Holistic Approach",
+    "Comprehensive Support",
+    "Sustainable Results",
+  ],
+  certification: [
+    "AYUSH License",
+    "FSSAI,US FDA - MoCra Registration",
+    "Ayush GMP",
+    "ISO 22000",
+    "WHO - GMP certificate",
+  ],
+
+  sizes: [
+    { name: "Starter Pack", weight: "500 gm", price: 1037 },
+    { name: "Results Pack", weight: "1 kg", price: 1279 },
+    { name: "Value Pack", weight: "1.5 kg", price: 1749 },
+  ],
+  formula:
+    "500 mg capsule - Trifala 90mg , Trikatu -60mg , Mulethi -100mg , Trivrit -100mg , Long -100mg , Musta -10mg , Vidang -10mg , Eliachi -10mg , Tej Patra - 10mg , Kala Namak -10mg ",
+  ingredients: [
+    "Kutaki",
+    "Rohini",
+    "Patol",
+    "Kalmegh",
+    "Bhumya Malaki",
+    "Kumari",
+    "Trifla",
+  ],
+  images: [
+    {
+      type: "img",
+      link: "https://thegutco.com.au/cdn/shop/files/TheGutCo_Multitasker_Multivitamin_2048x2048.png?v=1711325874",
+      description: [],
+    },
+    {
+      type: "img",
+      link: "https://thegutco.com.au/cdn/shop/files/TheGutCo_Multitasker_Multivitamin_2048x2048.png?v=1711325874",
+      description: [],
+    },
+    {
+      type: "img",
+      link: "https://thegutco.com.au/cdn/shop/files/TheGutCo_Multitasker_Multivitamin_2048x2048.png?v=1711325874",
+      description: [],
+    },
+    {
+      type: "img",
+      link: "https://thegutco.com.au/cdn/shop/files/TheGutCo_Multitasker_Multivitamin_2048x2048.png?v=1711325874",
+      description: [],
+    },
+    {
+      type: "img",
+      link: "https://thegutco.com.au/cdn/shop/files/TheGutCo_Multitasker_Multivitamin_2048x2048.png?v=1711325874",
+      description: [],
+    },
+  ],
+  discountBanner: "FLAT 40% OFF *INCLUDES 5% OFF ON PREPAID ORDERS",
+  saver: [
+    {
+      id: 1,
+      duration: "For Lactose Intolerances ( Milk and Milk Products )",
+      sticks: "",
+      price: "₹2500",
+      oldPrice: "₹2500",
+      save: "₹0",
+      badge: "Lactose Breath Test",
+    },
+    {
+      id: 2,
+      duration: "For Fructose Intolerances",
+      sticks: "",
+      price: "₹2500",
+      oldPrice: "₹2500",
+      save: "₹0",
+      badge: "Fructose  Breath Test",
+    },
+    {
+      id: 3,
+      duration: "For Sorbitol  Intolerances",
+      sticks: "",
+      price: "₹2500",
+      oldPrice: "₹2500",
+      save: "₹0",
+      badge: "Sorbitol  Breath Test",
+    },
+  ],
+  manufacturers:
+    "AYUSH License , FSSAI,US FDA - MoCra Registration , Ayush GMP , ISO 22000, WHO - GMP certificate   ",
+  questions: [
+    {
+      title: "Questions on your mind ?",
+      data: [
+        {
+          question: "You crave sugar often?",
+          answer: "",
+        },
+        {
+          question: "You have digestive problems?",
+          answer: "",
+        },
+        {
+          question: "You’re more prone to allergies?",
+          answer: "",
+        },
+        { question: "You don’t feel healthy?", answer: "" },
+        { question: "Your skin isn’t clear?", answer: "" },
+        { question: "You feel tired all the time?", answer: "" },
+        { question: "You have regular joint pain?", answer: "" },
+      ],
+      meta: "If the answer to even 3 of the above is yes then you need to start  Diet Plan immediately for 3 months.",
     },
   ],
   questions2: [
@@ -2148,14 +2318,6 @@ export const ingredients = [
     hiddenText:
       "Consuming Padma seeds can help reduce stress, anxiety, and promote relaxation. In today's fast-paced world, finding ways to alleviate stress is crucial for maintaining mental health. Padma seeds can be a natural remedy, inducing a sense of calm and tranquility.",
   },
-  {
-    id: 8,
-    image: cumin,
-    title: "Jeera",
-    description: "Known to promote digestion and boost pancreatic enzymes.",
-    hiddenText:
-      "Jeera, or cumin, is known to promote digestion and boost pancreatic enzymes. It contains thymol and essential oils that stimulate salivary glands, making digestion easier.",
-  },
 ];
 
 export const products = {
@@ -2169,4 +2331,5 @@ export const products = {
   "flora-pre-probiotic": product8,
   "diagnostic-gut-testing": product9,
   "pre-pro-biotic": product10,
+  "individualized-diet-plan": product11,
 };

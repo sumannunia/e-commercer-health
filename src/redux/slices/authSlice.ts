@@ -26,8 +26,9 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await axiosInstance.post("/login/customer", userData);
       localStorage.setItem("customer", JSON.stringify(response.data)); // Store user data
+      console.log({ response });
       const data = await dispatch(
-        fetchUserDetails({ token: response?.data.token, data: response.data })
+        fetchUserDetails({ token: response?.data?.token, data: response.data })
       ).unwrap();
       console.log({ data });
       await dispatch(syncLocalCart());
@@ -86,16 +87,17 @@ const logoutSession = async (data: { token: string; message?: string }) => {
 // Fetch user details
 export const fetchUserDetails = createAsyncThunk(
   "auth/fetchUserDetails",
-  async (data: { token: string; data: any }, { dispatch, rejectWithValue }) => {
+  async (data: { token: any; data: any }, { dispatch, rejectWithValue }) => {
+    console.log({ data });
     try {
       const response = await axiosInstance.get("/customer/current", {
         headers: {
-          token: data?.token, // Get token from localStorage
+          token: data.token, // Get token from localStorage
         },
       });
 
       // dispatch(fetchCart());
-      const user = { ...data?.data, ...response?.data };
+      const user = { ...response?.data, ...data };
       if (user?.token) {
         dispatch(fetchCart()); // Fetch cart only if user is authenticated
       }

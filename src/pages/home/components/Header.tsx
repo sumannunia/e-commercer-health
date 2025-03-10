@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   Container,
   Image,
@@ -47,7 +47,7 @@ const ellipsisData = [
   },
   {
     label: "Individualised Diet plan",
-    link: "/products/1/diagnostic-gut-testing",
+    link: "/products/1/individualized-diet-plan",
   },
 ];
 

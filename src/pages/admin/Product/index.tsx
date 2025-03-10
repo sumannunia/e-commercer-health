@@ -31,7 +31,7 @@ type Product = {
 };
 
 const Products = () => {
-  const fetchData = useFetch("/products");
+  const fetchData = useFetch("/product");
   const [opened, { open, close }] = useDisclosure(false);
   console.log({ fetchData });
   const { deleteData, loading } = useDelete();

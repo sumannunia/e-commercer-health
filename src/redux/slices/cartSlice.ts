@@ -24,7 +24,7 @@ export const addItemToCart = createAsyncThunk(
       productName: string;
       price: number;
       quantity: number;
-      image: string;
+      image?: string;
     },
     { getState, rejectWithValue, dispatch }
   ) => {
@@ -45,6 +45,9 @@ export const addItemToCart = createAsyncThunk(
 
     try {
       const token = (getState() as RootState).auth.user.token; // Get the token from the auth state
+      console.log({ token });
+      // delete the image key.
+      delete item.image;
       const response = await axiosInstance.post("/cart/add", item, {
         headers: { token },
       });
@@ -93,7 +96,7 @@ export const syncLocalCart = createAsyncThunk(
 
     // Sync local cart with API
     for (const item of localCartItems) {
-      await dispatch(addItemToCart(item));
+      await dispatch(addItemToCart(item as any));
     }
 
     // Clear local storage cart after successful sync
@@ -115,7 +118,7 @@ export const removeItemFromCart = createAsyncThunk(
   ) => {
     try {
       const token = (getState() as RootState).auth.user.token; // Get the token from the auth state
-      const response = await axiosInstance.delete("/cart", {
+      const response = await axiosInstance.delete("/cart/remove", {
         headers: { token },
         data: item,
       });
@@ -134,7 +137,8 @@ export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
   async (_, { getState, rejectWithValue }) => {
     try {
-      const token = (getState() as RootState).auth.user.token; // Get the token from the auth state
+      const token = (getState() as RootState)?.auth?.user?.token; // Get the token from the auth state
+      console.log("state----", getState());
       const response = await axiosInstance.get("/cart", { headers: { token } });
       // Store in localStorage
       localStorage.setItem("cart", JSON.stringify(response.data.items));
@@ -211,9 +215,9 @@ interface CartState {
   error: string | null;
 }
 
-const storedCart = localStorage.getItem("cart");
+const storedCart: any = localStorage.getItem("cart");
 const initialState: CartState = {
-  items: storedCart ? JSON.parse(storedCart) : [], // Load from localStorage if available
+  items: (storedCart != "undefined" && JSON.parse(storedCart)) || [], // Load from localStorage if available
   loading: false,
   error: null,
 };

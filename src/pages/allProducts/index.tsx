@@ -411,7 +411,7 @@ const AllProductsPage = () => {
     setActiveCategory(category === "All" ? "" : productId);
   };
   const dispatch = useAppDispatch();
-  const { loading }: any = useFetch("/products");
+  const { loading }: any = useFetch("/product");
 
   const handleAddToCart = (product: any) => {
     const { id, name, price, image } = product || {};

@@ -323,7 +323,7 @@ const blogData = [
   {
     type: "list",
     items: [
-      "ncorporate lean meats (chicken, fish) and plant-based proteins (tofu, soy chunks, nuts, seeds)",
+      "Incorporate lean meats (chicken, fish) and plant-based proteins (tofu, soy chunks, nuts, seeds)",
       "Avoid processed meats like sausages and salami to reduce sodium and preservative intake.",
       "Grilled Chicken with Veggies: Marinate chicken with herbs and spices; grill and serve with steamed vegetables.",
       "Tofu and Vegetable Stir-Fry: Toss tofu cubes with bok choy, bell peppers, and sesame seeds for a protein-packed meal.",

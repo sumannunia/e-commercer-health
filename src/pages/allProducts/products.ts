@@ -1022,7 +1022,7 @@ const product7 = {
         { question: "You don’t feel healthy?", answer: "" },
         { question: "Your skin isn’t clear?", answer: "" },
         { question: "You feel tired all the time?", answer: "" },
-        { question: "You’re always fogg?", answer: "" },
+
         { question: "You have regular joint pain?", answer: "" },
       ],
       meta: "If the answer to even 3 of the above is yes then you need to start  Gastro Comfort immediately for 3 months to start",
